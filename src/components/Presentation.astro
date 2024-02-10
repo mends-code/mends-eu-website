@@ -1,0 +1,36 @@
+---
+
+---
+<html>
+<head>
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+                <textarea data-template>
+                    # Hello, Reveal.js!
+                    - Point 1
+                    - Point 2
+                </textarea>
+            </section>
+        </div>
+    </div>
+    <script type="module">
+        // Import the Reveal.js module
+        import Reveal from '/node_modules/reveal.js';
+        import Markdown from '/node_modules/reveal.js/plugin/markdown/markdown.esm.js';
+      
+        // Ensure this runs on the client-side, once the module is loaded
+        document.addEventListener('DOMContentLoaded', (event) => {
+          // Initialize Reveal.js
+          let deck = new Reveal({
+            plugins: [ Markdown ]
+          });
+          deck.initialize();
+        });
+      </script>      
+</body>
+</html>
