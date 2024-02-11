@@ -4,41 +4,46 @@ import Presentation from '../components/Presentation.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<!-- Use the Presentation component and insert HTML content for the slides -->
 <Layout>
-	</Layout><Presentation>
-		<section class="text-2xl font-bold">Slide 1: Custom HTML content here</section>
-		<section class="mt-4 p-5 text-lg bg-gray-100 rounded-lg shadow">Slide 2: More custom HTML content here</section>
+  <!-- Presentation component should likely be used separately from the fullscreen layout sections
+  due to its specific functionality and structure -->
+  <Presentation>
+    <section class="text-2xl font-bold">Slide 1: Custom HTML content here</section>
+    <section class="mt-4 p-5 text-lg bg-gray-100 rounded-lg shadow">Slide 2: More custom HTML content here</section>
+
   <!-- Hero Section -->
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-blue-500 text-white r-fit-text">
-    <h1 class="text-5xl font-bold">Welcome to Our Service</h1>
-    <p class="text-xl mt-4">Offering you the best</p>
-    <a href="#features" class="mt-8 inline-block bg-white text-blue-500 px-8 py-3 rounded shadow hover:bg-gray-100 transition">Learn More</a>
+  <section class="flex items-center justify-center bg-blue-500 text-white text-center p-4 min-h-full min-v-full">
+    <div class="min-h-full min-v-full">
+      <h1 class="text-5xl font-bold">Welcome to Our Service</h1>
+      <p class="text-xl mt-4">Offering you the best</p>
+      <a href="#features" class="mt-8 inline-block bg-white text-blue-500 px-8 py-3 rounded shadow hover:bg-gray-100 transition">Learn More</a>
+    </div>
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="container mx-auto px-4 py-20">
-    <h2 class="text-4xl font-bold text-center">Features</h2>
-    <div class="flex flex-wrap -mx-4 mt-12 text-center">
-      <div class="w-full md:w-1/3 px-4">
-        <h3 class="text-2xl font-semibold">Fast</h3>
-        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="w-full md:w-1/3 px-4">
-        <h3 class="text-2xl font-semibold">Reliable</h3>
-        <p class="mt-4">Pellentesque in ipsum id orci porta dapibus.</p>
-      </div>
-      <div class="w-full md:w-1/3 px-4">
-        <h3 class="text-2xl font-semibold">Secure</h3>
-        <p class="mt-4">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+  <section id="features" class="flex items-center justify-center min-h-screen text-center p-4">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold">Features</h2>
+      <div class="flex flex-wrap -mx-4 mt-12 justify-center">
+        <div class="w-full md:w-1/3 px-4">
+          <h3 class="text-2xl font-semibold">Fast</h3>
+          <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="w-full md:w-1/3 px-4">
+          <h3 class="text-2xl font-semibold">Reliable</h3>
+          <p class="mt-4">Pellentesque in ipsum id orci porta dapibus.</p>
+        </div>
+        <div class="w-full md:w-1/3 px-4">
+          <h3 class="text-2xl font-semibold">Secure</h3>
+          <p class="mt-4">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Call to Action Section -->
-  <section class="bg-gray-200 py-20">
-    <div class="container mx-auto text-center">
+  <section class="flex items-center justify-center min-h-screen bg-gray-200 text-center p-4">
+    <div class="container mx-auto">
       <h2 class="text-3xl font-bold">Ready to get started?</h2>
       <p class="mt-4">Join us today and start your journey!</p>
       <a href="/signup" class="mt-8 inline-block bg-blue-500 text-white px-8 py-3 rounded shadow hover:bg-blue-600 transition">Sign Up Now</a>
@@ -46,15 +51,17 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Gallery Section -->
-  <section class="container mx-auto px-4 py-20">
-    <h2 class="text-4xl font-bold text-center">Gallery</h2>
-    <div class="flex flex-wrap -m-4 mt-8">
-      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-        <img src="/images/photo-1.jpg" alt="Photo 1" class="rounded shadow w-full h-auto">
+  <section class="flex items-center justify-center min-h-screen text-center p-4">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold">Gallery</h2>
+      <div class="flex flex-wrap -m-4 mt-8 justify-center">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <img src="/images/photo-1.jpg" alt="Photo 1" class="rounded shadow w-full h-auto">
+        </div>
+        <!-- Repeat for more images -->
       </div>
-      <!-- Repeat for more images -->
     </div>
   </section>
-	</Presentation>
-<Layout/>
-  
+</Presentation>
+
+</Layout>
