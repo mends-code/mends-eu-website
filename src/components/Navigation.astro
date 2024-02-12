@@ -8,10 +8,10 @@ const { navLinks }: { navLinks: NavLink[] } = Astro.props;
 ---
 
 <nav>
-  <ul class="flex space-x-4 font-display uppercase text-xl text-matisse-600">
+  <ul class="flex space-x-4 ">
     {navLinks.map((link) => (
-      <li>
-        <a href={link.href} class="hover:text-hippie-blue-400 transition-colors hover:transition-colors">{link.text}</a>
+      <li class="first-letter:text-3xl font-display uppercase text-xl text-matisse-600 hover:text-hippie-blue-400 transition-colors hover:transition-colors">
+        <a href={link.href} class="">{link.text}</a>
       </li>
     ))}
       </ul>
