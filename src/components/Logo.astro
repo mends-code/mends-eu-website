@@ -1,0 +1,44 @@
+---
+const { desiredHeight } = Astro.props;
+
+const originalHeight = 562; // Original total height: 262px + 38px + 262px
+const originalWidth = 462; // Original total width (example value)
+
+// Calculate scale factors based on the desired dimensions
+const scaleHeightFactor = desiredHeight ? (desiredHeight / originalHeight) : 1;
+const desiredWidth = originalHeight ? originalWidth * scaleHeightFactor : originalWidth;
+---
+
+<!-- Main wrapper with dynamic height and scale -->
+<div style={`transform: scale(${scaleHeightFactor}); transform-origin: top left; width: ${desiredWidth ? `${desiredWidth}px` : 'auto'}; height: ${desiredHeight ? `${desiredHeight}px` : 'auto'};`} class="">
+    <div class="flex flex-nowrap justify-start gap-[38px]" style="transform: scale(var(--scale-factor)); transform-origin: top left;">
+    <!-- Left column container -->
+    <div class="flex flex-col gap-[38px]">
+      <!-- Upper left rectangle with a circle -->
+      <div class="w-[262px] h-[262px] bg-transparent flex items-center justify-center relative">
+        <div class="w-[262px] h-[262px] rounded-full bg-gradient-to-b gradient-matisse-to-frost-to-bottom bg-[length:162px_1048px] bg-top lower-gradient absolute"></div>
+      </div>
+      
+      <!-- Lower left with three vertical strips -->
+      <div class="w-[262px] h-[262px] bg-transparent flex flex-row justify-between">
+        <div class="w-[62px] h-[262px] bg-gradient-to-b gradient-rhino-to-pale-leaf-to-bottom bg-[length:62px_1048px] bg-top rounded-full lower-gradient"></div>
+        <div class="w-[62px] h-[162px] bg-gradient-to-b gradient-rhino-to-pale-leaf-to-bottom bg-[length:62px_648px] bg-top rounded-full mt-[38px] lower-gradient"></div>
+        <div class="w-[62px] h-[262px] bg-gradient-to-b gradient-rhino-to-pale-leaf-to-bottom bg-[length:62px_1048px] bg-top rounded-full lower-gradient"></div>
+      </div>
+    </div>
+
+    <!-- Right column container -->
+    <div class="flex flex-col gap-[38px]">
+      <!-- Upper right rectangle with three horizontal bars -->
+      <div class="w-[162px] h-[262px] bg-transparent flex flex-col justify-between">
+        <div class="w-[162px] h-[62px] bg-gradient-to-t gradient-rhino-to-pale-leaf-to-top bg-[length:162px_248px] bg-bottom rounded-full upper-gradient"></div>
+        <div class="w-[100px] h-[62px] bg-gradient-to-t gradient-rhino-to-pale-leaf-to-top bg-[length:100px_248px] bg-bottom rounded-full upper-gradient"></div>
+        <div class="w-[162px] h-[62px] bg-gradient-to-t gradient-rhino-to-pale-leaf-to-top bg-[length:162px_248px] bg-bottom rounded-full upper-gradient"></div>
+      </div>
+      
+      <!-- Lower right rectangle remains unchanged -->
+      <div class="w-[162px] h-[262px] bg-transparent flex items-center justify-center">
+        <div class="w-[162px] h-[262px] rounded-[38px] absolute bg-gradient-to-t gradient-matisse-to-frost-to-top bg-[length:162px_1048px] bg-top upper-gradient"></div>
+      </div>
+    </div>
+  </div>

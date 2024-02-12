@@ -1,54 +1,28 @@
 ---
-interface Props {
+// Import necessary components
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Define the expected props for the layout
+interface LayoutProps {
   title: string;
-  description?: string; // Optional description prop
-  image?: string; // Optional image prop for social media
+  description: string;
+  navLinks: { text: string; href: string; }[];
 }
 
-const { title, description = "Default description if none provided", image = "/default-social-image.png" } = Astro.props;
+// Destructure props passed to the layout
+const { title, description, navLinks } = Astro.props as LayoutProps;
 ---
 
-<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <!-- Primary Meta Tags -->
-  <title>{title}</title>
-  <meta name="title" content={title} />
-  <meta name="description" content={description} />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <!-- Responsive viewport tag -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Generator (showing the use of Astro) -->
-  <meta name="generator" content={Astro.generator} />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={Astro.url} /> <!-- Ensure you define Astro.url appropriately -->
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={Astro.url} /> <!-- Ensure you define Astro.url appropriately -->
-  <meta property="twitter:title" content={title} />
-  <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content={image} />
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href={Astro.url} /> <!-- Ensure you define Astro.url appropriately -->
-
-  <!-- Additional tags for improved accessibility -->
-  <meta name="theme-color" content="#ffffff"/> <!-- Adjust the color to match your site's theme -->
-
-  <link rel="stylesheet" href="/src/styles/global.css">
-</head>
-<body>
-  <slot />
-</body>
+  <Head title={title} description={description} />
+  <body>
+    <Header navLinks={navLinks} />
+    <main>
+      <!-- This is where the page-specific content will go -->
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
