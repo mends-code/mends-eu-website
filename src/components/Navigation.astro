@@ -1,16 +1,18 @@
 ---
-interface NavLink {
+// Define the type for NavLink
+type NavLink = {
   text: string;
   href: string;
-}
+};
 
-const { navLinks }: { navLinks: NavLink[] } = Astro.props;
+// Retrieve `navLinks` from props
+const navLinks: NavLink[] = Astro.props.navLinks;  
 ---
 
 <nav>
-  <ul class="flex space-x-4 ">
+  <ul class="flex space-x-6">
     {navLinks.map((link) => (
-      <li class="first-letter:text-3xl font-display uppercase text-xl text-matisse-600 hover:text-hippie-blue-400 transition-colors hover:transition-colors">
+      <li class="first-letter:text-2xl leading-none font-bodyv font-bold uppercase text-lg text-matisse-600 hover:text-hippie-blue-400 transition-colors hover:transition-colors">
         <a href={link.href} class="">{link.text}</a>
       </li>
     ))}
