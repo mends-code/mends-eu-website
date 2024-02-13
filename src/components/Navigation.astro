@@ -8,13 +8,11 @@ type NavLink = {
 // Retrieve `navLinks` from props
 const navLinks: NavLink[] = Astro.props.navLinks;
 ---
-
-<button class="peer"> <div class="h-12 w-12 bg-slate-600"/></button>
-<nav class="hidden peer-focus:flex fixed inset-0 bg-opacity-0 bg-transparent peer-focus:bg-black peer-focus:bg-opacity-75 justify-center items-center z-50 duration-3000 ease-in-out transition-all">
-  <ul class="flex space-x-6">
+<nav class="col-span-2 bg-transparent hidden overflow-auto px-10 shadow-xl rounded-3xl peer-focus:block transition-all">
+  <ul class="flex grow-1 flex-col h-full w-full justify-center content-center gap-6">
     {
       navLinks.map((link) => (
-        <li class="font-body font-bold uppercase text-lg text-matisse-600 hover:text-hippie-blue-400 transition-colors hover:transition-colors">
+        <li class="text-center font-body font-lg">
           <a href={link.href} class="">
             {link.text}
           </a>
