@@ -1,14 +1,14 @@
 ---
 // Import necessary components
-import Head from '../components/Head.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 // Define the expected props for the layout
 interface LayoutProps {
   title: string;
   description: string;
-  navLinks: { text: string; href: string; }[];
+  navLinks: { text: string; href: string }[];
 }
 
 // Destructure props passed to the layout
@@ -17,12 +17,13 @@ const { title, description, navLinks } = Astro.props as LayoutProps;
 
 <html lang="en">
   <Head title={title} description={description} />
-  <body>
-    <Header navLinks={navLinks} />
-    <main>
-      <!-- This is where the page-specific content will go -->
-      <slot />
+  <body class="flex flex-col min-h-screen">
+    <Header class="flex-none" navLinks={navLinks} />
+    <main class="flex-grow flex w-full p-10">
+      <div class="flex-grow w-full bg-slate-200 shadow-lg p-16 rounded-3xl">
+        <slot />
+      </div>
     </main>
-    <Footer />
+    <Footer class="flex-none" />
   </body>
 </html>
