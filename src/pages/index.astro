@@ -1,18 +1,62 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Define metadata and navigation links for this page
 const title = "Mends";
 const description = "Learn more about our company and values.";
 const navLinks = [
-  { text: 'Motivation', href: '#' },
-  { text: 'Empathy', href: '#' },
-  { text: 'Nimbleness', href: '#' },
-  { text: 'Diversity', href: '#' },
-  { text: 'Sustainability', href: '#' },
+  { text: "Motivation", href: "#" },
+  { text: "Empathy", href: "#" },
+  { text: "Nimbleness", href: "#" },
+  { text: "Diversity", href: "#" },
+  { text: "Sustainability", href: "#" },
 ];
 ---
 
 <Layout title={title} description={description} navLinks={navLinks}>
-	asdf
+  <main>
+    <!-- Hero Section -->
+    <section class="text-center py-20">
+      <h1 class="text-5xl font-bold">Welcome to Our Service</h1>
+      <p class="text-xl mt-4">A brief introduction to what you do.</p>
+      <button class="mt-8 bg-blue-500 text-white px-6 py-2 rounded-full"
+        >Get Started</button
+      >
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+      <div class="container mx-auto grid grid-cols-3 gap-4">
+        <!-- Repeat for each feature -->
+        <div class="p-4 shadow rounded-lg bg-white">
+          <h2 class="font-bold text-xl">Feature One</h2>
+          <p class="mt-2">A short description of a key feature.</p>
+        </div>
+        <div class="p-4 shadow rounded-lg bg-white">
+          <h2 class="font-bold text-xl">Feature One</h2>
+          <p class="mt-2">A short description of a key feature.</p>
+        </div>
+        <div class="p-4 shadow rounded-lg bg-white">
+          <h2 class="font-bold text-xl">Feature One</h2>
+          <p class="mt-2">A short description of a key feature.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+      <div class="container mx-auto">
+        <h2 class="text-center text-3xl font-bold">What Our Users Say</h2>
+        <!-- Testimonial content -->
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="text-center py-20">
+      <h2 class="text-3xl font-bold">Ready to Start?</h2>
+      <button class="mt-8 bg-green-500 text-white px-6 py-2 rounded-full"
+        >Sign Up Now</button
+      >
+    </section>
+  </main>
 </Layout>
