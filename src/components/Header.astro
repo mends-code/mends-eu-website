@@ -14,10 +14,10 @@ const navLinks: NavLink[] = Astro.props.navLinks;
 ---
 
 <!-- Header Component -->
-<header class="bg-white shadow-lg">
+<header class="bg-white">
   <div class="container mx-auto flex justify-between items-center p-5">
     <!-- Logo Component with a desired height of 100 -->
-    <Logo desiredHeight={100} />
+    <Logo />
 
     <!-- Navigation Component with navigation links passed as props -->
     <Navigation navLinks={navLinks} />
