@@ -7,14 +7,18 @@ type NavLink = {
 
 // Retrieve `navLinks` from props
 const navLinks: NavLink[] = Astro.props.navLinks;
+const { svgClasses = "" } = Astro.props; // Default to empty string if no classes are provided
 ---
-<button class="block m-6 mt-auto peer nav-button">
+
+<button class="block p-3 md:p-6 mt-auto peer nav-button">
   <!--?xml version="1.0" encoding="UTF-8"?-->
   <svg
-    class="h-[29px] w-full"
+    class=`${svgClasses}`
     id="uuid-505c508a-26d7-4da0-8eab-29c714423060"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 262 262"
+    width="100%"
+    height="100%"
   >
     <rect
       fill="#6AA2BC"
@@ -40,8 +44,12 @@ const navLinks: NavLink[] = Astro.props.navLinks;
       ry="30.99997"></rect></svg
   ></button
 >
-<nav class="nav-container col-span-2 opacity-0 overflow-auto px-10 shadow-xl rounded-3xl peer-[.nav-active]:block peer-[.nav-active]:opacity-100 transition-opacity duration-500 bg-hippie-blue">
-  <ul class="flex grow-1 flex-col h-full w-full justify-center content-center gap-0 font-display">
+<nav
+  class="nav-container col-span-2 opacity-0 overflow-auto px-10 shadow-xl rounded-3xl peer-[.nav-active]:block peer-[.nav-active]:opacity-100 transition-opacity duration-500 bg-hippie-blue"
+>
+  <ul
+    class="flex grow-1 flex-col h-full w-full justify-center content-center gap-0 font-display"
+  >
     {
       navLinks.map((link) => (
         <li class="text-center uppercase p-4 text-2xl text-white flex hover:text-frost transition-colors">
@@ -54,11 +62,11 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   </ul>
 </nav>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navButton = document.querySelector('.nav-button');
+  document.addEventListener("DOMContentLoaded", function () {
+    const navButton = document.querySelector(".nav-button");
 
     if (!navButton) {
-      console.error('Navigation button not found.');
+      console.error("Navigation button not found.");
       return;
     }
 
@@ -74,21 +82,21 @@ const navLinks: NavLink[] = Astro.props.navLinks;
 
     // Function to toggle .nav-active class
     function toggleNavActive() {
-      navButton!.classList.toggle('nav-active');
+      navButton!.classList.toggle("nav-active");
     }
 
     // Event listener for the nav button click
-    navButton.addEventListener('click', function() {
+    navButton.addEventListener("click", function () {
       toggleNavActive();
     });
 
     // Event listener for each nav link click
-    const navLinks = document.querySelectorAll('.nav-container *');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
+    const navLinks = document.querySelectorAll(".nav-container *");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
         // Only remove .nav-active class if it's currently applied
-        if (navButton.classList.contains('nav-active')) {
-          navButton.classList.remove('nav-active');
+        if (navButton.classList.contains("nav-active")) {
+          navButton.classList.remove("nav-active");
         }
       });
     });
