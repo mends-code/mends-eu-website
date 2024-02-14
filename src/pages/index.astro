@@ -5,11 +5,11 @@ import Layout from "../layouts/Layout.astro";
 const title = "Mends";
 const description = "Learn more about our company and values.";
 const navLinks = [
-  { text: "Motivation", href: "#" },
-  { text: "Empathy", href: "https://example.com" },
-  { text: "Nimbleness", href: "#" },
-  { text: "Diversity", href: "#" },
-  { text: "Sustainability", href: "#" },
+  { text: "Motivation", href: "#motivation" },
+  { text: "Empathy", href: "#empathy" },
+  { text: "Nimbleness", href: "#nimblesness" },
+  { text: "Diversity", href: "#diversity" },
+  { text: "Sustainability", href: "#sustainability" },
 ];
 ---
 
@@ -20,7 +20,7 @@ const navLinks = [
   >
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
-        src="path-to-your-vector-graphic.svg"
+        src="/images/heart-hero.svg"
         alt="Healthcare Innovation"
         class="max-w-xs md:max-w-sm lg:max-w-md"
       />
@@ -59,7 +59,7 @@ const navLinks = [
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
           <img
-            src="path-to-your-values-vector-graphic.svg"
+            src="/images/values-section.svg"
             alt="Our Values"
             class="max-w-xs md:max-w-sm lg:max-w-md"
           />
@@ -68,14 +68,14 @@ const navLinks = [
     </div>
   </section>
 
-  <section class="py-12 md:py-24">
+  <section class="py-12 md:py-24" id="motivation">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap-reverse items-center justify-center">
         <div
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center md:justify-end lg:justify-end px-4 md:pr-8 lg:pr-12"
         >
           <img
-            src="path-to-motivation-image.svg"
+            src="/images/motivation-section.svg"
             alt="Motivation"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -134,8 +134,8 @@ const navLinks = [
         </div>
         <div class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4">
           <img
-            src="path-to-empathy-image.svg"
-            alt="Empathy in Action"
+		  src="/images/empathy-section.svg"
+		  alt="Empathy in Action"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
         </div>
@@ -143,14 +143,14 @@ const navLinks = [
     </div>
   </section>
 
-  <section class="py-12 md:py-24">
+  <section class="py-12 md:py-24" id="nimblesness">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap items-center justify-center">
         <div
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
         >
           <img
-            src="path-to-nimbleness-illustration.svg"
+		  src="/images/nimblesness-section.svg"
             alt="Adaptable Solutions"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -180,9 +180,9 @@ const navLinks = [
     </div>
   </section>
 
-  <section class="py-12 md:py-24 bg-white">
+  <section class="py-12 md:py-24 bg-white" id="diversity">
     <div class="container mx-auto px-4">
-      <div class="flex flex-wrap-reverse items-center justify-center ">
+      <div class="flex flex-wrap-reverse items-center justify-center">
         <div class="w-full md:w-1/2 lg:w-1/2 px-4 max-w-lg">
           <h2
             class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
@@ -209,7 +209,7 @@ const navLinks = [
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
         >
           <img
-            src="path-to-diversity-image.svg"
+		  src="/images/diversity-section.svg"
             alt="Diverse Representation"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -218,14 +218,14 @@ const navLinks = [
     </div>
   </section>
 
-  <section class="py-12 md:py-24 ">
+  <section class="py-12 md:py-24" id="sustainability">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap items-center justify-center">
         <div
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
         >
           <img
-            src="path-to-sustainability-illustration.svg"
+		  src="/images/sustainability-section.svg"
             alt="Sustainable Healthcare"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -269,18 +269,18 @@ const navLinks = [
       </div>
       <div class="flex flex-wrap justify-center items-center">
         <img
-          src="path-to-how-it-works-step-1.svg"
+          src="/images/first-step.svg"
           alt="Step 1: Sign Up"
           class="max-w-xs m-4"
         />
         <img
-          src="path-to-how-it-works-step-2.svg"
+          src="/images/second-step.svg"
           alt="Step 2: Personalization"
           class="max-w-xs m-4"
         />
         <img
-          src="path-to-how-it-works-step-3.svg"
-          alt="Step 3: Continuous Care"
+		src="/images/third-step.svg"
+		alt="Step 3: Continuous Care"
           class="max-w-xs m-4"
         />
       </div>

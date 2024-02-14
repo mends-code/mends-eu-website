@@ -8,11 +8,43 @@ type NavLink = {
 // Retrieve `navLinks` from props
 const navLinks: NavLink[] = Astro.props.navLinks;
 ---
-<nav class="col-span-2 opacity-0 overflow-auto px-10 shadow-xl rounded-3xl peer-focus-within:block peer-focus-within:opacity-100 transition-opacity duration-500 bg-hippie-blue">
+<button class="block m-6 mt-auto peer nav-button">
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <svg
+    class="h-[29px] w-full"
+    id="uuid-505c508a-26d7-4da0-8eab-29c714423060"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 262 262"
+  >
+    <rect
+      fill="#6AA2BC"
+      x="0"
+      y="0"
+      width="262"
+      height="62"
+      rx="30.99997"
+      ry="30.99997"></rect><rect
+      fill="#6AA2BC"
+      x="0"
+      y="100"
+      width="262"
+      height="62"
+      rx="30.14894"
+      ry="30.14894"></rect><rect
+      fill="#6AA2BC"
+      x="0"
+      y="200"
+      width="262"
+      height="62"
+      rx="30.99997"
+      ry="30.99997"></rect></svg
+  ></button
+>
+<nav class="nav-container col-span-2 opacity-0 overflow-auto px-10 shadow-xl rounded-3xl peer-[.nav-active]:block peer-[.nav-active]:opacity-100 transition-opacity duration-500 bg-hippie-blue">
   <ul class="flex grow-1 flex-col h-full w-full justify-center content-center gap-0 font-display">
     {
       navLinks.map((link) => (
-        <li class="text-center uppercase p-4 text-4xl text-white flex hover:text-frost transition-colors">
+        <li class="text-center uppercase p-4 text-2xl text-white flex hover:text-frost transition-colors">
           <a class="w-full" href={link.href}>
             {link.text}
           </a>
@@ -21,3 +53,29 @@ const navLinks: NavLink[] = Astro.props.navLinks;
     }
   </ul>
 </nav>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navButton = document.querySelector('.nav-button');
+
+    // Function to toggle .nav-active class
+    function toggleNavActive() {
+      navButton.classList.toggle('nav-active');
+    }
+
+    // Event listener for the nav button click
+    navButton.addEventListener('click', function() {
+      toggleNavActive();
+    });
+
+    // Event listener for each nav link click
+    const navLinks = document.querySelectorAll('.nav-container *');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Only remove .nav-active class if it's currently applied
+        if(navButton.classList.contains('nav-active')) {
+          navButton.classList.remove('nav-active');
+        }
+      });
+    });
+  });
+</script>
