@@ -4,7 +4,6 @@ import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Main from "../components/Main.astro";
-import Navigation from "../components/Navigation.astro";
 
 // Define the expected props for the layout
 interface LayoutProps {
@@ -21,7 +20,6 @@ const { title, description, navLinks } = Astro.props as LayoutProps;
   <Head title={title} description={description} />
   <body class="container mx-auto grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 max-h-screen h-screen">
     <Header />
-    <Navigation navLinks={navLinks} />
     <Main>
       <slot />
     </Main>
