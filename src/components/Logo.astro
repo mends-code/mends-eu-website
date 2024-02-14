@@ -1,19 +1,17 @@
 ---
-// Using Astro.props to dynamically set the height
-const { layoutHeight } = Astro.props;
-
-// Default height if not provided
-const defaultHeight = "62px"; // Adjust this default as necessary
+// Define props for Logo.astro
+const { svgClasses = "" } = Astro.props; // Default to empty string if no classes are provided
 ---
 
-<div class="" style={`max-height: ${layoutHeight || defaultHeight};`}>
+<div class="">
   <a href="/"
     ><svg
+      class=`${svgClasses}`
       id="uuid-1b4e8324-ee6d-4a56-b6c9-dd3ce84908a2"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1871.99573 562"
-      class="w-full"
-      style={`max-height: ${layoutHeight || defaultHeight};`}
+      width="100%"
+      height="100%"
     >
       <defs>
         <linearGradient
