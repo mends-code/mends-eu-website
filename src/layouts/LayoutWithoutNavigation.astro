@@ -18,7 +18,7 @@ const { title, description, navLinks } = Astro.props as LayoutProps;
 
 <html lang="en">
   <Head title={title} description={description} />
-  <body class="container mx-auto grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 max-h-screen h-screen">
+  <body class="container mx-auto grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 min-h-full h-full">
     <Header />
     <Main>
       <slot />
