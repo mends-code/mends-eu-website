@@ -6,5 +6,9 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://mends.eu',
-  integrations: [tailwind(), sitemap()]
+  integrations: [tailwind(), sitemap()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "pl"]
+  }
 });
