@@ -57,9 +57,24 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   document.addEventListener('DOMContentLoaded', function() {
     const navButton = document.querySelector('.nav-button');
 
+    if (!navButton) {
+      console.error('Navigation button not found.');
+      return;
+    }
+
+    // Assuming you might have elements similar to wrapperElement and inputElement
+    // const wrapperElement = document.querySelector('.wrapper');
+    // const inputElement = document.querySelector('.input');
+
+    // Ensure the elements exist
+    // if (!(wrapperElement instanceof HTMLDivElement) || !(inputElement instanceof HTMLInputElement)) {
+    //   console.error('Required elements do not match expected types.');
+    //   return;
+    // }
+
     // Function to toggle .nav-active class
     function toggleNavActive() {
-      navButton.classList.toggle('nav-active');
+      navButton!.classList.toggle('nav-active');
     }
 
     // Event listener for the nav button click
@@ -72,7 +87,7 @@ const navLinks: NavLink[] = Astro.props.navLinks;
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
         // Only remove .nav-active class if it's currently applied
-        if(navButton.classList.contains('nav-active')) {
+        if (navButton.classList.contains('nav-active')) {
           navButton.classList.remove('nav-active');
         }
       });
