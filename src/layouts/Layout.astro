@@ -20,14 +20,16 @@ const { title, description, lang, navLinks } = Astro.props as LayoutProps;
 
 <html lang={lang}>
   <Head title={title} description={description} />
-  <body x-data="{ isNavActive: false }"
-    class="container fixed sm:relative mx-auto grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 max-h-screen h-screen bg-white"
+  <body
+    x-data="{ isNavActive: false }" class="container mx-auto"
   >
-    <Header svgClasses="h-[38px] md:h-[62px]" />
-    <Navigation navLinks={navLinks} svgClasses="h-[18px] md:h-[29px]" />
-    <Main>
-      <slot />
-    </Main>
-    <Footer />
+    <div class="fixed h-full max-h-full grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 bg-white">
+      <Header svgClasses="h-[38px] md:h-[62px]" />
+      <Navigation navLinks={navLinks} svgClasses="h-[18px] md:h-[29px]" />
+      <Main>
+        <slot />
+      </Main>
+      <Footer />
+    </div>
   </body>
 </html>
