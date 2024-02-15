@@ -10,7 +10,11 @@ const navLinks: NavLink[] = Astro.props.navLinks;
 const { svgClasses = "" } = Astro.props; // Default to empty string if no classes are provided
 ---
 
-<button class="block p-3 md:p-6 m-3 peer nav-button sticky top-0">
+<button
+  class="block p-3 md:p-6 m-3 peer nav-button sticky top-0"
+  @click="isActive = !isActive"
+  :class="{ 'nav-active': isActive }"
+>
   <!--?xml version="1.0" encoding="UTF-8"?-->
   <svg
     class=`${svgClasses}`
@@ -45,6 +49,7 @@ const { svgClasses = "" } = Astro.props; // Default to empty string if no classe
   ></button
 >
 <nav
+  @click="isActive = false"
   class="nav-container col-span-2 opacity-0 overflow-auto px-10 shadow-xl rounded-3xl peer-[.nav-active]:block peer-[.nav-active]:opacity-100 transition-opacity duration-500 bg-hippie-blue"
 >
   <ul
@@ -61,44 +66,3 @@ const { svgClasses = "" } = Astro.props; // Default to empty string if no classe
     }
   </ul>
 </nav>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navButton = document.querySelector(".nav-button");
-
-    if (!navButton) {
-      console.error("Navigation button not found.");
-      return;
-    }
-
-    // Assuming you might have elements similar to wrapperElement and inputElement
-    // const wrapperElement = document.querySelector('.wrapper');
-    // const inputElement = document.querySelector('.input');
-
-    // Ensure the elements exist
-    // if (!(wrapperElement instanceof HTMLDivElement) || !(inputElement instanceof HTMLInputElement)) {
-    //   console.error('Required elements do not match expected types.');
-    //   return;
-    // }
-
-    // Function to toggle .nav-active class
-    function toggleNavActive() {
-      navButton!.classList.toggle("nav-active");
-    }
-
-    // Event listener for the nav button click
-    navButton.addEventListener("click", function () {
-      toggleNavActive();
-    });
-
-    // Event listener for each nav link click
-    const navLinks = document.querySelectorAll(".nav-container *");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        // Only remove .nav-active class if it's currently applied
-        if (navButton.classList.contains("nav-active")) {
-          navButton.classList.remove("nav-active");
-        }
-      });
-    });
-  });
-</script>
