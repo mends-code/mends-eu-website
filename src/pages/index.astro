@@ -11,7 +11,7 @@ const navLinks = [
   { text: "Diversity", href: "#diversity" },
   { text: "Sustainability", href: "#sustainability" },
 ];
-const lang = 'pl';
+const lang = "pl";
 ---
 
 <Layout title={title} description={description} navLinks={navLinks} lang={lang}>
@@ -21,7 +21,7 @@ const lang = 'pl';
   >
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
-        src="/images/heart-hero.svg"
+        src="/images/landing-hero-01.svg"
         alt="Healthcare Innovation"
         class="max-w-xs md:max-w-sm lg:max-w-md"
       />
@@ -60,7 +60,7 @@ const lang = 'pl';
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
           <img
-            src="/images/values-section.svg"
+            src="/images/landing-values-01.svg"
             alt="Our Values"
             class="max-w-xs md:max-w-sm lg:max-w-md"
           />
@@ -76,7 +76,7 @@ const lang = 'pl';
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center md:justify-end lg:justify-end px-4 md:pr-8 lg:pr-12"
         >
           <img
-            src="/images/motivation-section.svg"
+            src="/images/landing-motivation-01.svg"
             alt="Motivation"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -135,8 +135,8 @@ const lang = 'pl';
         </div>
         <div class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4">
           <img
-		  src="/images/empathy-section.svg"
-		  alt="Empathy in Action"
+            src="/images/landing-empathy-01.svg"
+            alt="Empathy in Action"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
         </div>
@@ -151,7 +151,7 @@ const lang = 'pl';
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
         >
           <img
-		  src="/images/nimblesness-section.svg"
+            src="/images/landing-nibmlesness-01.svg"
             alt="Adaptable Solutions"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -210,7 +210,7 @@ const lang = 'pl';
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
         >
           <img
-		  src="/images/diversity-section.svg"
+            src="/images/landing-diversity-01.svg"
             alt="Diverse Representation"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -226,7 +226,7 @@ const lang = 'pl';
           class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
         >
           <img
-		  src="/images/sustainability-section.svg"
+            src="/images/landing-sustainability-01.svg"
             alt="Sustainable Healthcare"
             class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
           />
@@ -256,40 +256,45 @@ const lang = 'pl';
   </section>
 
   <section class="py-12 md:py-24 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <div class="max-w-xl mx-auto">
-        <h2
-          class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
-        >
-          Simplifying Healthcare: Our Approach
-        </h2>
-        <p class="text-lg md:text-xl mb-8 text-rhino">
-          Discover how Mends seamlessly integrates telemedicine and AI to
-          provide personalized, accessible healthcare solutions.
-        </p>
-      </div>
-      <div class="flex flex-wrap justify-center items-center">
-        <img
-          src="/images/first-step.svg"
-          alt="Step 1: Sign Up"
-          class="max-w-xs m-4"
-        />
-        <img
-          src="/images/second-step.svg"
-          alt="Step 2: Personalization"
-          class="max-w-xs m-4"
-        />
-        <img
-		src="/images/third-step.svg"
-		alt="Step 3: Continuous Care"
-          class="max-w-xs m-4"
-        />
-      </div>
-      <div class="max-w-xl mx-auto">
-        <p class="text-lg md:text-xl mt-8 text-rhino">
-          From easy sign-up to personalized care plans and continuous support,
-          Mends is revolutionizing the way you access healthcare.
-        </p>
+    <div class="container mx-auto px-12 text-center">
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
+      >
+        Our Patient-Centric Approach
+      </h2>
+      <div
+        class="grid grid-cols-3 justify-center content-center text-lg md:text-xl text-rhino gap-12"
+      >
+        <div class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center">
+          <div
+            class="text-8xl leading-0 font-bold w-full text-hippie-blue"
+          >
+            1
+          </div>
+          <h3 class="font-semibold mt-4">Sign Up</h3>
+          <p>Begin your health journey with our simple sign-up process.</p>
+        </div>
+        <div class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center">
+          <div
+            class="text-8xl leading-0 font-bold w-full text-hippie-blue"
+          >
+            2
+          </div>
+          <h3 class="font-semibold mt-4">Personalization</h3>
+          <p>Get a customized care plan designed to meet your unique needs.</p>
+        </div>
+        <div class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center">
+          <div
+            class="text-8xl leading-0 font-bold w-full text-hippie-blue"
+          >
+            3
+          </div>
+          <h3 class="font-semibold mt-4">Continuous Care</h3>
+          <p>
+            Access ongoing support and dynamic plan adjustments as your needs
+            evolve.
+          </p>
+        </div>
       </div>
     </div>
   </section>
