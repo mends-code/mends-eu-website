@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",
+    "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.3.5",
+    "astro-robots-txt": "^1.0.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
