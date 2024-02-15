@@ -11,7 +11,7 @@ const { svgClasses = "" } = Astro.props; // Default to empty string if no classe
 ---
 
 <button
-  class="block p-3 md:p-6 m-3 peer nav-button sticky top-0"
+  class="block p-3 md:p-6 m-3 peer nav-button"
   @click="isNavActive = !isNavActive"
   :class="{ 'nav-active': isNavActive }"
 >
