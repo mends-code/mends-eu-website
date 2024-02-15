@@ -10,7 +10,7 @@ const navLinks: NavLink[] = Astro.props.navLinks;
 const { svgClasses = "" } = Astro.props; // Default to empty string if no classes are provided
 ---
 
-<button class="block p-3 md:p-6 m-3 peer nav-button">
+<button class="block p-3 md:p-6 m-3 peer nav-button sticky top-0">
   <!--?xml version="1.0" encoding="UTF-8"?-->
   <svg
     class=`${svgClasses}`
