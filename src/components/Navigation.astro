@@ -22,8 +22,8 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   >
     {
       navLinks.map((link) => (
-        <li class="text-center uppercase p-4 text-2xl text-white flex hover:text-frost transition-colors">
-          <a class="w-full" href={link.href}>
+        <li class="text-center uppercase text-2xl text-white flex hover:text-frost transition-colors">
+          <a class="w-full p-4" href={link.href}>
             {link.text}
           </a>
         </li>
