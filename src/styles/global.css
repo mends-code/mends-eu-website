@@ -1,53 +1,15 @@
-@keyframes floatGradientBottomToTop {
-
-    0%,
+@keyframes grow {
+    0% {
+      transform: scale(0);
+    }
     100% {
-        background-position: center bottom;
+      transform: scale(1);
     }
-
-    50% {
-        background-position: center top;
-    }
-}
-
-@keyframes floatGradientTopToBottom {
-
-    0%,
-    100% {
-        background-position: center top;
-    }
-
-    50% {
-        background-position: center bottom;
-    }
-}
-
-
-.lower-gradient {
-    animation: floatGradientTopToBottom 20s infinite linear;
-}
-
-.upper-gradient {
-    animation: floatGradientBottomToTop 20s infinite linear;
-}
-
-/* gradients.css */
-.gradient-matisse-to-frost-to-bottom {
-    background-image: linear-gradient(to bottom, #38668D, #6AA2BC, #C5D9BC, #EAF2DB);
-}
-
-.gradient-matisse-to-frost-to-top {
-    background-image: linear-gradient(to top, #38668D, #6AA2BC, #C5D9BC, #EAF2DB);
-}
-
-.gradient-rhino-to-pale-leaf-to-bottom {
-    background-image: linear-gradient(to bottom, #39435E, #38668D, #6AA2BC, #C5D9BC);
-}
-
-.gradient-rhino-to-pale-leaf-to-top {
-    background-image: linear-gradient(to top, #39435E, #38668D, #6AA2BC, #C5D9BC);
-}
-
+  }
+  
+  .shape-animate {
+    animation: grow 3s infinite;
+  }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
