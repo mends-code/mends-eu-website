@@ -28,7 +28,7 @@ const { title, description, lang, navLinks } = Astro.props as LayoutProps;
     @resize.window="updateNavStyle()"
   >
     <div
-      class="h-screen container w-full fixed grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 bg-white"
+      class="h-full container w-full fixed grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 bg-white"
     >
       <Header svgClasses="h-[38px] md:h-[62px]" />
       <NavigationButton svgClasses="h-[18px] md:h-[29px]" />
