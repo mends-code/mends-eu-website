@@ -11,9 +11,11 @@ const navLinks: NavLink[] = Astro.props.navLinks;
 
 <nav
   x-show="showNav"
+  x-cloak
   x-transition.opacity
   @click="showNav = false"
   :style="navStyle"
+  :class="showNav ? '' : 'hidden'"
   x-init="navStyle = `width: ${$refs.mainContainer.offsetWidth}px; height: ${$refs.mainContainer.offsetHeight}px; top: ${$refs.mainContainer.offsetTop}px; left: ${$refs.mainContainer.offsetLeft}px;`"
   class="absolute z-50 overflow-scroll px-10 shadow-xl rounded-3xl bg-hippie-blue h-auto"
 >
