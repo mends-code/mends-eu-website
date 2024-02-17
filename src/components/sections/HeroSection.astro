@@ -4,13 +4,13 @@ interface Props {
 	imageUrl?: string;
 	buttonText?: string;
 	buttonLink?: string;
-  description?: string;
+  id?: string;
 }
-const { title, imageUrl, buttonText, buttonLink } = Astro.props;
+const { title, imageUrl, buttonText, buttonLink, id } = Astro.props;
 ---
 
 <section
-	class="container mx-auto px-4 py-12 md:py-24 flex flex-wrap items-center min-h-full"
+	class="container mx-auto px-4 py-12 md:py-24 flex flex-wrap items-center min-h-full" id={id}
 >
 	<div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
 		<img src={imageUrl} alt={title} class="max-w-xs md:max-w-sm lg:max-w-md" />
