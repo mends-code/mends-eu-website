@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Main from "../components/Main.astro";
 import Navigation from "../components/Navigation.astro";
+import NavigationButton from "../components/NavigationButton.astro";
 
 // Define the expected props for the layout
 interface LayoutProps {
@@ -20,12 +21,18 @@ const { title, description, lang, navLinks } = Astro.props as LayoutProps;
 
 <html lang={lang}>
   <Head title={title} description={description} />
-  <body x-data="{ isNavActive: false }" class="container mx-auto">
+  <body
+    x-data="{ showNav: false, navStyle: '', updateNavStyle() { const mainContainer = this.$refs.mainContainer; if (mainContainer) { this.navStyle = `width: ${mainContainer.offsetWidth}px; height: ${mainContainer.offsetHeight}px; top: ${mainContainer.offsetTop}px; left: ${mainContainer.offsetLeft}px;`;}}}"
+    class="container mx-auto"
+    x-init="updateNavStyle()"
+    @resize.window="updateNavStyle()"
+  >
     <div
-      class="fixed h-full max-h-full grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 bg-white"
+      class="h-screen container w-full fixed grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr_auto] grid-flow-row gap-0 bg-white"
     >
       <Header svgClasses="h-[38px] md:h-[62px]" />
-      <Navigation navLinks={navLinks} svgClasses="h-[18px] md:h-[29px]" />
+      <NavigationButton svgClasses="h-[18px] md:h-[29px]" />
+      <Navigation navLinks={navLinks} />
       <Main>
         <slot />
       </Main>

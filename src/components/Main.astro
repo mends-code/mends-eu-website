@@ -2,6 +2,11 @@
 // Main.astro
 ---
 
-<main  class="col-span-2 overflow-auto shadow-xl rounded-3xl bg-hippie-blue-50 peer-[.nav-active]:opacity-0 peer-[.nav-active]:h-0 peer-[.nav-active]:p-0 transition-opacity duration-500 no-scrollbar peer">
+<main
+  class="col-span-2 overflow-scroll shadow-xl rounded-3xl bg-hippie-blue-50 no-scrollbar"
+  :class="showNav ? 'opacity-0' : ''"
+  x-transition.opacity
+  x-ref="mainContainer"
+>
   <slot />
 </main>
