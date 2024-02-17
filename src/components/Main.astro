@@ -4,10 +4,9 @@
 
 <main
   class="col-span-2 overflow-scroll shadow-xl rounded-3xl bg-hippie-blue-50 no-scrollbar"
-  x-show="!showNav"
+  :class="showNav ? 'opacity-0' : ''"
   x-transition.opacity
   x-ref="mainContainer"
-
 >
   <slot />
 </main>
