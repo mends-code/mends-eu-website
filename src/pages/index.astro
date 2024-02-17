@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
+import HeroSection from "../components/sections/HeroSection.astro";
 // Define metadata and navigation links for this page
 const title = "Mends";
 const description = "Learn more about our company and values.";
 const navLinks = [
+  
   { text: "Motivation", href: "#motivation" },
   { text: "Empathy", href: "#empathy" },
   { text: "Nimbleness", href: "#nimblesness" },
@@ -15,32 +16,16 @@ const lang = "pl";
 ---
 
 <Layout title={title} description={description} navLinks={navLinks} lang={lang}>
-  <!-- Hero Section -->
-  <section
-    class="container mx-auto px-4 py-12 md:py-24 flex flex-wrap items-center min-h-full"
+
+  <HeroSection 
+    title="Transforming Healthcare with Heart and Innovation" 
+    description="At Mends, we're leveraging AI and telemedicine to bring you closer to your health goals, wherever you are."
+    imageUrl="/images/landing-hero-01.svg"
+    buttonText="Discover Our Vision"
+    buttonLink="#values"
   >
-    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-      <img
-        src="/images/landing-hero-01.svg"
-        alt="Healthcare Innovation"
-        class="max-w-xs md:max-w-sm lg:max-w-md"
-      />
-    </div>
-    <div class="w-full md:w-1/2 text-center md:text-left text-matisse max-w-xl">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-        Transforming Healthcare with Heart and Innovation
-      </h1>
-      <p class="text-xl md:text-2xl mb-8 text-rhino">
-        At Mends, we're leveraging AI and telemedicine to bring you closer to
-        your health goals, wherever you are.
-      </p>
-      <a
-        href="#values"
-        class="inline-block bg-matisse text-white font-bold py-2 px-6 rounded-full hover:bg-hippie-blue transition duration-300"
-        >Discover Our Vision</a
-      >
-    </div>
-  </section>
+  At Mends, we're <strong>leveraging AI and telemedicine</strong> to bring you closer to your health goals, wherever you are.
+</HeroSection>
 
   <section class="py-12 md:py-24 bg-white">
     <div class="container mx-auto px-4 back">
