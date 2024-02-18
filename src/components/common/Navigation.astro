@@ -1,11 +1,10 @@
 ---
-// Define the type for NavLink
+// Navigation.astro
 type NavLink = {
   text: string;
   href: string;
 };
 
-// Retrieve `navLinks` from props
 const navLinks: NavLink[] = Astro.props.navLinks;
 ---
 
@@ -18,7 +17,6 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   :class="showNav ? '' : 'hidden'"
   class="absolute z-50 overflow-auto px-10 shadow-xl rounded-3xl bg-hippie-blue h-auto"
 >
-<!--recalculate height realtime when container size changes? -->
   <ul
     class="flex grow-1 flex-col h-full w-full justify-center content-center gap-0 font-display"
   >

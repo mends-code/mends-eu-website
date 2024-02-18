@@ -1,0 +1,40 @@
+---
+// Define the interface for the component's props
+interface Props {
+  id?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  reverse?: boolean; // Optionally reverse the layout
+}
+
+// Extract props from Astro.props
+const { id, imageUrl, imageAlt, reverse = false } = Astro.props as Props;
+---
+
+<section class={`py-12 md:py-24 ${reverse ? "" : "bg-white"}`} id={id}>
+  <div class="container mx-auto px-4">
+    <div
+      class={`flex ${reverse ? "md:flex-row-reverse" : "flex-wrap"} items-center justify-center`}
+    >
+      <div class="w-full md:w-1/2 mb-8 md:mb-0 max-w-lg">
+        <h2
+          class={`text-2xl md:text-3xl lg:text-4xl font-bold mb-4 ${reverse ? 'text-matisse' : 'text-hippie-blue'}`}
+        >
+          <slot name="heading" />
+        </h2>
+        <p class="text-lg md:text-xl text-rhino">
+          <slot name="paragraph" />
+        </p>
+      </div>
+      <div class="w-full md:w-1/2 flex justify-center">
+        {imageUrl && (
+          <img
+            src={imageUrl}
+            alt={imageAlt}
+            class="max-w-xs md:max-w-sm lg:max-w-md"
+          />
+        )}
+      </div>
+    </div>
+  </div>
+</section>
