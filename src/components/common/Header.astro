@@ -8,8 +8,9 @@ import Logo from './Logo.astro';
 const { svgClasses = '' } = Astro.props;
 ---
 
-<header class="row-span-1 col-span-1 w-full">
+<header class="w-full">
 	<div class="flex justify-between items-center p-3 md:p-6">
 		<Logo svgClasses=`${svgClasses}` />
+		<slot />
 	</div>
 </header>
