@@ -1,308 +1,228 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/sections/HeroSection.astro';
-const title = 'Mends';
-const description = 'Learn more about our company and values.';
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
+import Feature from "../components/sections/Feature.astro";
+const title = "Mends";
+const description = "Learn more about our company and values.";
 const navLinks = [
-	{ text: 'Motivation', href: '#motivation' },
-	{ text: 'Empathy', href: '#empathy' },
-	{ text: 'Nimbleness', href: '#nimblesness' },
-	{ text: 'Diversity', href: '#diversity' },
-	{ text: 'Sustainability', href: '#sustainability' },
+  { text: "Motivation", href: "#motivation" },
+  { text: "Empathy", href: "#empathy" },
+  { text: "Nimbleness", href: "#nimblesness" },
+  { text: "Diversity", href: "#diversity" },
+  { text: "Sustainability", href: "#sustainability" },
 ];
-const lang = 'pl';
+const lang = "pl";
 ---
 
 <Layout title={title} description={description} navLinks={navLinks} lang={lang}>
-	<HeroSection
-		title="Transforming Healthcare with Heart and Innovation"
-		imageUrl="/images/landing-hero-01.svg"
-		buttonText="Discover Our Vision"
-		buttonLink="#values"
+  <HeroSection
+    imageAlt="Transforming Healthcare"
+    imageUrl="/images/landing-hero-01.svg"
+    buttonText="Discover Our Vision"
+    buttonLink="#values"
     id="home"
-	>
-		At Mends, we're <strong>leveraging AI and telemedicine</strong> to bring you
-		closer to your health goals, wherever you are.
-	</HeroSection>
+  >
+    <div slot="header">
+      <div
+        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+      >
+        Transforming
+      </div> Healthcare with Heart and Innovation
+    </div>
+     At Mends, we're <strong>leveraging AI and telemedicine</strong> to bring
+    you closer to your health goals, wherever you are.
+  </HeroSection>
 
-	<section class="py-12 md:py-24 bg-white" id="values">
-		<div class="container mx-auto px-4 back">
-			<div class="flex flex-wrap items-center justify-center">
-				<div class="w-full md:w-1/2 mb-8 md:mb-0 max-w-lg">
-					<h2
-						class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-hippie-blue"
-					>
-						Our Values Guide Our Mission
-					</h2>
-					<p class="text-lg md:text-xl text-rhino">
-						At Mends, our commitment to Motivation, Empathy, Nimbleness,
-						Diversity, and Sustainability isn’t just what we do—it's who we are.
-						These principles are woven into the fabric of our operations,
-						driving innovation and ensuring we make a real impact in healthcare.
-					</p>
-				</div>
-				<div class="w-full md:w-1/2 flex justify-center">
-					<img
-						src="/images/landing-values-01.svg"
-						alt="Our Values"
-						class="max-w-xs md:max-w-sm lg:max-w-md"
-					/>
-				</div>
-			</div>
-		</div>
-	</section>
+  <Feature
+    id="values"
+    imageUrl="/images/landing-values-01.svg"
+    imageAlt="Our Values"
+  >
+    <span slot="heading">
+      Our <span
+        class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+        >Values</span
+      > Guide Our Mission
+    </span>
+    <span slot="paragraph">
+      At Mends, our essence is defined by core values: <strong
+        >Motivation, Empathy, Nimbleness, Diversity, and Sustainability</strong
+      >.
+      <br /><br />
+       These principles are not just what we do; they're who we are, guiding us
+      to revolutionize healthcare.
+    </span>
+  </Feature>
 
-	<section class="py-12 md:py-24" id="motivation">
-		<div class="container mx-auto px-4">
-			<div class="flex flex-wrap-reverse items-center justify-center">
-				<div
-					class="w-full md:w-1/2 lg:w-1/2 flex justify-center md:justify-end lg:justify-end px-4 md:pr-8 lg:pr-12"
-				>
-					<img
-						src="/images/landing-motivation-01.svg"
-						alt="Motivation"
-						class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
-					/>
-				</div>
-				<div class="w-full md:w-1/2 lg:w-1/2 px-4 max-w-lg">
-					<h2
-						class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-matisse"
-					>
-						Fueling Innovation: The Power of Motivation at Mends
-					</h2>
-					<p class="text-lg md:text-xl mb-8 text-rhino">
-						At Mends, the essence of motivation transcends mere ambition; it's
-						the cornerstone of our mission to redefine healthcare. Our zeal to
-						innovate is ignited by the profound desire to address and solve the
-						complex challenges faced by individuals worldwide. This unwavering
-						motivation is what propels us forward, guiding our exploration of
-						new horizons in AI and telemedicine.
-					</p>
-					<p class="text-lg md:text-xl text-rhino">
-						It's this passion that drives every advancement we make, ensuring
-						that we're not just participants in the healthcare industry but
-						pioneers shaping its future. By relentlessly pursuing groundbreaking
-						solutions, we strive to make quality healthcare not only a
-						possibility but a reality for everyone, everywhere.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+  <Feature
+    id="motivation"
+    imageUrl="/images/landing-motivation-01.svg"
+    imageAlt="Motivation"
+    reverse
+  >
+    <span slot="heading">
+      Fueling Innovation: The Power of <span
+        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+        >Motivation</span
+      > at Mends
+    </span>
+    <span slot="paragraph">
+      Mends harnesses Motivation as our driving force, pushing beyond ambition
+      to revolutionize healthcare. Our commitment to innovation, powered by the
+      desire to tackle global health challenges, positions us as pioneers, not
+      just participants.
+      <br /><br />
+      <strong>We're dedicated to advancing healthcare</strong> through AI and
+      telemedicine, making top-quality care accessible to all.
+    </span>
+  </Feature>
 
-	<section id="empathy" class="py-12 md:py-24 bg-white">
-		<div class="container mx-auto px-4">
-			<div class="flex flex-wrap items-center justify-center">
-				<div class="w-full md:w-1/2 lg:w-1/2 px-4 mb-8 md:mb-0 max-w-lg">
-					<h2
-						class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
-					>
-						Empathy in Action: Crafting Compassionate Care at Mends
-					</h2>
-					<p class="text-lg md:text-xl mb-8 text-rhino">
-						At Mends, empathy is not just a value; it's a practice embedded in
-						our technology. Our AI is designed to understand and anticipate the
-						needs of our users, offering personalized care that feels genuinely
-						human. From tailoring health plans to providing compassionate
-						support, our platform ensures every interaction is infused with
-						understanding and care.
-					</p>
-					<p class="text-lg md:text-xl text-rhino">
-						Examples of this personal touch include AI-driven insights that
-						adapt to individual health goals, reminders that resonate with
-						personal schedules, and support systems that reflect an
-						understanding of user challenges. It's about creating a healthcare
-						experience that feels as caring and attentive as a visit to a
-						trusted healthcare provider.
-					</p>
-				</div>
-				<div class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4">
-					<img
-						src="/images/landing-empathy-01.svg"
-						alt="Empathy in Action"
-						class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
-					/>
-				</div>
-			</div>
-		</div>
-	</section>
+  <Feature
+    id="empathy"
+    imageUrl="/images/landing-empathy-01.svg"
+    imageAlt="Empathy"
+  >
+    <span slot="heading">
+      <span
+        class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+        >Empathy</span
+      > in Action: Crafting Compassionate Care at Mends
+    </span>
+    <span slot="paragraph">
+      Mends elevates Empathy into our technology, ensuring our AI offers
+      personalized, human-centric care.
+      <br /><br />
+       By integrating AI-driven insights tailored to individual health goals and
+      providing compassionate support, <strong
+        >we create a healthcare experience that's both caring and attentive</strong
+      >, mirroring the comfort of a trusted healthcare provider.
+    </span>
+  </Feature>
 
-	<section class="py-12 md:py-24" id="nimblesness">
-		<div class="container mx-auto px-4">
-			<div class="flex flex-wrap items-center justify-center">
-				<div
-					class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
-				>
-					<img
-						src="/images/landing-nimblesness-01.svg"
-						alt="Adaptable Solutions"
-						class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
-					/>
-				</div>
-				<div class="w-full md:w-1/2 lg:w-1/2 px-4 max-w-lg">
-					<h2
-						class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-matisse"
-					>
-						Agility in Action: Embracing Change with Nimble Solutions
-					</h2>
-					<p class="text-lg md:text-xl mb-8 text-rhino">
-						Mends embodies nimbleness in every aspect of our healthcare
-						solutions. Our platform's agility allows us to swiftly adapt to
-						emerging health trends, integrate new medical insights, and
-						implement user feedback, ensuring our services evolve at the pace of
-						life itself.
-					</p>
-					<p class="text-lg md:text-xl text-rhino">
-						Whether it's updating our AI algorithms to reflect the latest health
-						data or adjusting our telemedicine offerings to better meet user
-						needs, our commitment to nimbleness ensures that Mends remains at
-						the forefront of healthcare innovation, ready to address tomorrow's
-						challenges today.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+  <Feature
+    id="nimblesness"
+    imageUrl="/images/landing-nimblesness-01.svg"
+    imageAlt="Nimbleness"
+    reverse
+  >
+    <span slot="heading">
+      Agility in Action: Embracing Change with <span
+      class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+      >Nimble</span
+    > Solutions
+    </span>
+    <span slot="paragraph">
+      Mends excels in agility, <strong
+        >quickly adapting to health trends and user feedback</strong
+      > with our advanced AI and telemedicine services.
+      <br /><br />
+       This flexibility ensures we lead in healthcare innovation, addressing
+      future challenges today.
+    </span>
+  </Feature>
 
-	<section class="py-12 md:py-24 bg-white" id="diversity">
-		<div class="container mx-auto px-4">
-			<div class="flex flex-wrap-reverse items-center justify-center">
-				<div class="w-full md:w-1/2 lg:w-1/2 px-4 max-w-lg">
-					<h2
-						class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
-					>
-						Embracing Diversity: Mends' Global Vision
-					</h2>
-					<p class="text-lg md:text-xl mb-8 text-rhino">
-						Diversity fuels Mends' mission to redefine healthcare, integrating
-						inclusivity within our AI and team. This dedication ensures our
-						platform and solutions authentically cater to a global audience,
-						making every patient feel valued and understood. Our technology,
-						enriched by diverse data, mirrors the multifaceted nature of human
-						health needs.
-					</p>
-					<p class="text-lg md:text-xl text-rhino">
-						Our team's rich mosaic of backgrounds propels our innovation,
-						leveraging varied perspectives to meet complex health challenges.
-						Mends champions diversity as essential, paving the way for a
-						healthcare system that's inclusive and effective for everyone,
-						everywhere.
-					</p>
-				</div>
-				<div
-					class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
-				>
-					<img
-						src="/images/landing-diversity-01.svg"
-						alt="Diverse Representation"
-						class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
-					/>
-				</div>
-			</div>
-		</div>
-	</section>
+  <Feature
+    id="diversity"
+    imageUrl="/images/landing-diversity-01.svg"
+    imageAlt="Diversity"
+  >
+    <span slot="heading"> Embracing <span
+      class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+      >Diversity</span
+    >: Mends' Global Vision</span>
+    <span slot="paragraph">
+      Mends champions Diversity, ensuring our AI and team reflect a global
+      perspective for inclusive healthcare.
+      <br /><br />
+       This approach allows us to address diverse health needs effectively,
+      <strong>making healthcare accessible and personalized for all.</strong>
+    </span>
+  </Feature>
 
-	<section class="py-12 md:py-24" id="sustainability">
-		<div class="container mx-auto px-4">
-			<div class="flex flex-wrap items-center justify-center">
-				<div
-					class="w-full md:w-1/2 lg:w-1/2 flex justify-center px-4 mb-8 md:mb-0"
-				>
-					<img
-						src="/images/landing-sustainability-01.svg"
-						alt="Sustainable Healthcare"
-						class="max-w-xs md:max-w-sm lg:max-w-lg h-auto"
-					/>
-				</div>
-				<div class="w-full md:w-1/2 lg:w-1/2 px-4 max-w-lg">
-					<h2
-						class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-matisse"
-					>
-						A Greener Future: Mends' Commitment to Sustainability
-					</h2>
-					<p class="text-lg md:text-xl mb-8 text-rhino">
-						Sustainability drives every decision at Mends. We're committed to
-						reducing our environmental impact and ensuring our healthcare
-						solutions promote a healthier planet. By integrating green
-						technologies and sustainable practices, we aim to lead by example,
-						inspiring a movement towards more eco-friendly healthcare worldwide.
-					</p>
-					<p class="text-lg md:text-xl text-rhino">
-						From minimizing waste in our operations to leveraging AI for more
-						efficient patient care, our dedication to sustainability is woven
-						into the fabric of our business. Join us as we innovate for health,
-						not just for today, but for generations to come.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+  <Feature
+    id="sustainability"
+    imageUrl="/images/landing-sustainability-01.svg"
+    imageAlt="Sustainability"
+    reverse
+  >
+    <span slot="heading">
+      A Greener Future: Mends' Commitment to Sustainability
+    </span>
+    <span slot="paragraph">
+      Mends prioritizes Sustainability, <strong
+        >embedding eco-friendly practices and green technologies</strong
+      > in our operations and healthcare solutions.
+      <br /><br />
+       This commitment not only aims for a healthier planet but also sets a
+      precedent for future-oriented, sustainable healthcare innovations.
+    </span>
+  </Feature>
 
-	<section class="py-12 md:py-24 bg-white">
-		<div class="container mx-auto px-12 text-center">
-			<h2
-				class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
-			>
-				Our Patient-Centric Approach
-			</h2>
-			<div
-				class="grid grid-cols-1 md:grid-cols-3 justify-center content-center text-lg md:text-xl text-rhino gap-12"
-			>
-				<div
-					class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center"
-				>
-					<div
-						class="text-6xl md:text-8xl leading-0 font-bold w-full text-hippie-blue"
-					>
-						1
-					</div>
-					<h3 class="font-semibold mt-4">Sign Up</h3>
-					<p>Begin your health journey with our simple sign-up process.</p>
-				</div>
-				<div
-					class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center"
-				>
-					<div
-						class="text-6xl md:text-8xl leading-0 font-bold w-full text-hippie-blue"
-					>
-						2
-					</div>
-					<h3 class="font-semibold mt-4">Personalization</h3>
-					<p>Get a customized care plan designed to meet your unique needs.</p>
-				</div>
-				<div
-					class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center"
-				>
-					<div
-						class="text-6xl md:text-8xl leading-0 font-bold w-full text-hippie-blue"
-					>
-						3
-					</div>
-					<h3 class="font-semibold mt-4">Continuous Care</h3>
-					<p>
-						Access ongoing support and dynamic plan adjustments as your needs
-						evolve.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section class="py-12 md:py-24 bg-white">
+    <div class="container mx-auto px-12 text-center">
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-hippie-blue"
+      >
+        Our Patient-Centric Approach
+      </h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 justify-center content-center text-lg md:text-xl text-rhino gap-12"
+      >
+        <div
+          class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center"
+        >
+          <div
+            class="text-6xl md:text-8xl leading-0 font-bold w-full text-hippie-blue"
+          >
+            1
+          </div>
+          <h3 class="font-semibold mt-4">Sign Up</h3>
+          <p>Begin your health journey with our simple sign-up process.</p>
+        </div>
+        <div
+          class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center"
+        >
+          <div
+            class="text-6xl md:text-8xl leading-0 font-bold w-full text-hippie-blue"
+          >
+            2
+          </div>
+          <h3 class="font-semibold mt-4">Personalization</h3>
+          <p>Get a customized care plan designed to meet your unique needs.</p>
+        </div>
+        <div
+          class="step p-10 rounded-full aspect-square shadow-lg relative flex flex-col justify-center"
+        >
+          <div
+            class="text-6xl md:text-8xl leading-0 font-bold w-full text-hippie-blue"
+          >
+            3
+          </div>
+          <h3 class="font-semibold mt-4">Continuous Care</h3>
+          <p>
+            Access ongoing support and dynamic plan adjustments as your needs
+            evolve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section class="bg-matisse text-white py-12 md:py-24">
-		<div class="container mx-auto px-4 text-center max-w-xl">
-			<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-				Join the Healthcare Revolution
-			</h2>
-			<p class="text-lg md:text-xl mb-8">
-				Invest in a future where healthcare meets humanity. Partner with Mends
-				to make a lasting impact on global health.
-			</p>
-			<a
-				href="#contact-form"
-				class="inline-block bg-rhino hover:bg-hippie-blue text-white font-bold py-2 px-6 rounded-full transition duration-300"
-			>
-				Make an Impact
-			</a>
-		</div>
-	</section>
+  <section class="bg-matisse text-white py-12 md:py-24">
+    <div class="container mx-auto px-4 text-center max-w-xl">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+        Join the Healthcare Revolution
+      </h2>
+      <p class="text-lg md:text-xl mb-8">
+        Invest in a future where healthcare meets humanity. Partner with Mends
+        to make a lasting impact on global health.
+      </p>
+      <a
+        href="#contact-form"
+        class="inline-block bg-rhino hover:bg-brandy text-white hover:text-rhino font-bold py-2 px-6 rounded-full transition duration-300"
+      >
+        Make an Impact
+      </a>
+    </div>
+  </section>
 </Layout>

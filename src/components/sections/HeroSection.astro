@@ -1,22 +1,23 @@
 ---
+// HeroSection.astro
 interface Props {
-	title?: string;
+	imageAlt?: string;
 	imageUrl?: string;
 	buttonText?: string;
 	buttonLink?: string;
   id?: string;
 }
-const { title, imageUrl, buttonText, buttonLink, id } = Astro.props;
+const { imageAlt, imageUrl, buttonText, buttonLink, id } = Astro.props;
 ---
 
 <section
 	class="container mx-auto px-4 py-12 md:py-24 flex flex-wrap items-center min-h-full" id={id}
 >
 	<div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-		<img src={imageUrl} alt={title} class="max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square" />
+		<img src={imageUrl} alt={imageAlt} class="max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square" />
 	</div>
 	<div class="w-full md:w-1/2 text-center md:text-left text-matisse max-w-xl">
-		<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{title}</h1>
+		<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"><slot name="header" /></h1>
 		<p class="text-xl md:text-2xl mb-8 text-rhino"><slot /></p>
 		<a
 			href={buttonLink}
