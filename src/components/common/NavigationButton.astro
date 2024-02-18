@@ -1,5 +1,8 @@
 ---
-const { svgClasses = "" } = Astro.props; // Default to empty string if no classes are provided
+interface Props {
+	svgClasses?: string; // Added to define `og:url` and `twitter:url` dynamically
+}
+const { svgClasses } = Astro.props; // Default to empty string if no classes are provided
 ---
 
 <button

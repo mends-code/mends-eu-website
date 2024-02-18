@@ -1,16 +1,18 @@
 ---
-// Import components
+interface Props {
+	svgClasses?: string; // Added to define `og:url` and `twitter:url` dynamically
+}
+
 import Logo from './Logo.astro';
-const { svgClasses = "" } = Astro.props; // Default to empty string if no classes are provided
+const { svgClasses } = Astro.props; // Default to empty string if no classes are provided
 ---
 
 <!-- Header Component -->
 <header class="row-span-1 col-span-1 w-full">
-  <div class="flex justify-between items-center p-3 md:p-6">
-    <!-- Logo Component with a desired height of 100 -->
-    <Logo svgClasses=`${svgClasses}`/>
+	<div class="flex justify-between items-center p-3 md:p-6">
+		<!-- Logo Component with a desired height of 100 -->
+		<Logo svgClasses=`${svgClasses}` />
 
-    <!-- Navigation Component with navigation links passed as props -->
-  </div>
+		<!-- Navigation Component with navigation links passed as props -->
+	</div>
 </header>
-

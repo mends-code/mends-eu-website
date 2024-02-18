@@ -1,46 +1,39 @@
 ---
-import LayoutWithoutNavigation from "../layouts/LayoutWithoutNavigation.astro";
+import Layout from '../layouts/Layout.astro';
 
-// Define metadata and navigation links for this page
-const title = "Mends";
-const description = "Learn more about our company and values.";
-const navLinks = [
-  { text: "Motivation", href: "#" },
-  { text: "Empathy", href: "https://example.com" },
-  { text: "Nimbleness", href: "#" },
-  { text: "Diversity", href: "#" },
-  { text: "Sustainability", href: "#" },
-];
+const title = 'Mends';
+const description = 'Learn more about our company and values.';
+const navActive = false;
 ---
 
-<LayoutWithoutNavigation
-  title={title}
-  description={description}
-  navLinks={navLinks}
->
-  <section
-    class="h-full flex flex-col items-center justify-center text-center px-4"
-  >
-    <div class="max-w-md mx-auto">
-      <img src="/images/404.svg" alt="Lost in Healthcare" class="max-w-sm mx-auto mb-8 p-10" />
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-        Oops! Page Not Found
-      </h1>
-      <p class="text-lg md:text-xl mb-8">
-        It seems you've found a page that doesn't exist or has been moved. Don't
-        worry, we've got plenty of ways to get you back on track.
-      </p>
-      <a
-        href="/"
-        class="inline-block bg-matisse text-white font-bold py-2 px-6 rounded-full hover:bg-rhino transition duration-300"
-        >Return Home</a
-      >
-      <p class="mt-4">or</p>
-      <a
-        href="/contact"
-        class="inline-block text-matisse hover:text-rhino transition duration-300"
-        >Contact Us</a
-      >
-    </div>
-  </section>
-</LayoutWithoutNavigation>
+<Layout title={title} description={description} navActive={navActive}>
+	<section
+		class="h-full flex flex-col items-center justify-center text-center px-4"
+	>
+		<div class="max-w-md mx-auto">
+			<img
+				src="/images/404.svg"
+				alt="Lost in Healthcare"
+				class="max-w-sm mx-auto mb-8 p-10"
+			/>
+			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+				Oops! Page Not Found
+			</h1>
+			<p class="text-lg md:text-xl mb-8">
+				It seems you've found a page that doesn't exist or has been moved. Don't
+				worry, we've got plenty of ways to get you back on track.
+			</p>
+			<a
+				href="/"
+				class="inline-block bg-matisse text-white font-bold py-2 px-6 rounded-full hover:bg-rhino transition duration-300"
+				>Return Home</a
+			>
+			<p class="mt-4">or</p>
+			<a
+				href="/contact"
+				class="inline-block text-matisse hover:text-rhino transition duration-300"
+				>Contact Us</a
+			>
+		</div>
+	</section>
+</Layout>
