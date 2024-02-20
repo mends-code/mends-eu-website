@@ -18,6 +18,7 @@
     "alpinejs": "^3.13.5",
     "astro": "^4.3.5",
     "astro-robots-txt": "^1.0.0",
+    "astro-seo": "^0.8.2",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

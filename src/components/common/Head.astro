@@ -17,12 +17,12 @@ const {
 import '/src/styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
 import Unfont from 'unplugin-fonts/astro/component.astro';
+import { SEO } from "astro-seo";
 ---
 
 <head>
 	<meta charset="UTF-8" />
 	<title>{title}</title>
-	<ViewTransitions />
 	<meta name="description" content={description} />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<meta
@@ -47,5 +47,6 @@ import Unfont from 'unplugin-fonts/astro/component.astro';
 	<link rel="canonical" href={url} />
 	<link rel="sitemap" href="/sitemap-index.xml" />
 	<meta name="theme-color" content="#ffffff" />
+	<ViewTransitions />
 	<Unfont />
 </head>
