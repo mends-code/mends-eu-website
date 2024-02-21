@@ -1,238 +1,228 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import HeroSection from "../components/sections/HeroSection.astro";
-import Feature from "../components/sections/Feature.astro";
-import CallToAction from "../components/sections/CallToAction.astro";
-import LogoGrid from "../components/sections/LogoGrid.astro";
-import LogoElement from "../components/elements/LogoElement.astro";
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Feature from '../components/sections/Feature.astro';
+import CallToAction from '../components/sections/CallToAction.astro';
+import LogoGrid from '../components/sections/LogoGrid.astro';
+import LogoElement from '../components/elements/LogoElement.astro';
 
 const {
-  title = "Pioneering Sustainable Healthcare through AI & Telemedicine",
-  description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
-  image = "/default-social-image.png",
-  navLinks = [
-    { text: "Motivation", href: "#motivation" },
-    { text: "Empathy", href: "#empathy" },
-    { text: "Nimbleness", href: "#nimblesness" },
-    { text: "Diversity", href: "#diversity" },
-    { text: "Sustainability", href: "#sustainability" },
-  ],
-  lang = "en",
+	title = 'Pioneering Sustainable Healthcare through AI & Telemedicine',
+	description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
+	navLinks = [
+		{ text: 'Motivation', href: '#motivation' },
+		{ text: 'Empathy', href: '#empathy' },
+		{ text: 'Nimbleness', href: '#nimblesness' },
+		{ text: 'Diversity', href: '#diversity' },
+		{ text: 'Sustainability', href: '#sustainability' },
+	],
+	lang = 'en',
 } = Astro.props;
 ---
 
-<Layout
-  title={title}
-  image={image}
-  description={description}
-  lang={lang}
-  navLinks={navLinks}
->
-  <HeroSection
-    imageAlt="Transforming Healthcare"
-    imageUrl="/images/landing/launch_2909658.svg"
-    buttonText="Discover Our Vision"
-    buttonLink="#values"
-    id="home"
-  >
-    <span slot="header">
-      <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
-      >
-        Transforming
-      </span> Healthcare with Heart and Innovation
-    </span>
-     At Mends, we're <strong>leveraging AI and telemedicine</strong> to bring
-    you closer to your health goals, wherever you are.
-  </HeroSection>
+<Layout title={title} description={description} lang={lang} navLinks={navLinks}>
+	<HeroSection
+		imageAlt="Transforming Healthcare"
+		imageUrl="/images/landing/launch_2909658.svg"
+		buttonText="Discover Our Vision"
+		buttonLink="#values"
+		id="home"
+	>
+		<span slot="header">
+			<span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+			>
+				Transforming
+			</span> Healthcare with Heart and Innovation
+		</span>
+		At Mends, we're <strong>leveraging AI and telemedicine</strong> to bring you
+		closer to your health goals, wherever you are.
+	</HeroSection>
 
-  <Feature
-    id="values"
-    imageUrl="/images/landing/universe_2909502.svg"
-    imageAlt="Our Values"
-  >
-    <span slot="heading">
-      Our <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
-        >Values</span
-      > Guide Our Mission
-    </span>
-    <span slot="paragraph">
-      At Mends, our essence is defined by core values: <strong
-        >Motivation, Empathy, Nimbleness, Diversity, and Sustainability</strong
-      >.
-      <br /><br />
-       These principles are not just what we do; they're who we are, guiding us
-      to revolutionize healthcare.
-    </span>
-  </Feature>
+	<Feature
+		id="values"
+		imageUrl="/images/landing/universe_2909502.svg"
+		imageAlt="Our Values"
+	>
+		<span slot="heading">
+			Our <span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+				>Values</span
+			> Guide Our Mission
+		</span>
+		<span slot="paragraph">
+			At Mends, our essence is defined by core values: <strong
+				>Motivation, Empathy, Nimbleness, Diversity, and Sustainability</strong
+			>.
+			<br /><br />
+			These principles are not just what we do; they're who we are, guiding us to
+			revolutionize healthcare.
+		</span>
+	</Feature>
 
-  <Feature
-    id="motivation"
-    imageUrl="/images/landing/energy_4405428.svg"
-    imageAlt="Motivation"
-    reverse
-  >
-    <span slot="heading">
-      Fueling Innovation: The Power of <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
-        >Motivation</span
-      > at Mends
-    </span>
-    <span slot="paragraph">
-      Mends harnesses Motivation as our driving force, pushing beyond ambition
-      to revolutionize healthcare. Our commitment to innovation, powered by the
-      desire to tackle global health challenges, positions us as pioneers, not
-      just participants.
-      <br /><br />
-      <strong>We're dedicated to advancing healthcare</strong> through AI and
-      telemedicine, making top-quality care accessible to all.
-    </span>
-  </Feature>
+	<Feature
+		id="motivation"
+		imageUrl="/images/landing/energy_4405428.svg"
+		imageAlt="Motivation"
+		reverse
+	>
+		<span slot="heading">
+			Fueling Innovation: The Power of <span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+				>Motivation</span
+			> at Mends
+		</span>
+		<span slot="paragraph">
+			Mends harnesses Motivation as our driving force, pushing beyond ambition
+			to revolutionize healthcare. Our commitment to innovation, powered by the
+			desire to tackle global health challenges, positions us as pioneers, not
+			just participants.
+			<br /><br />
+			<strong>We're dedicated to advancing healthcare</strong> through AI and telemedicine,
+			making top-quality care accessible to all.
+		</span>
+	</Feature>
 
-  <LogoGrid id="tech-stack">
-    <span slot="heading">Our Tech Stack</span>
-    <LogoElement
-      src="/images/logo_grid/postgresql_logo.svg"
-      alt="PostgreSQL"
-      href=""
-    />
-    <LogoElement
-      src="/images/logo_grid/redis_logo.svg"
-      alt="Redis"
-      href=""
-    />
-    <LogoElement
-      src="/images/logo_grid/chatwoot_logo.svg"
-      alt="Chatwoot"
-      href=""
-    />
-    <LogoElement src="/images/logo_grid/n8n_logo.svg" alt="n8n" href="" />
-    <LogoElement
-      src="/images/logo_grid/portainer_logo.svg"
-      alt="Portainer"
-      href=""
-    />
-    <LogoElement
-      src="/images/logo_grid/directus_logo.svg"
-      alt="Directus"
-      href=""
-    />
-    <LogoElement src="/images/logo_grid/hasura_logo.svg" alt="Hasura" href="" />
-    <LogoElement
-      src="/images/logo_grid/typebot_logo.svg"
-      alt="Typebot"
-      href=""
-    />
-  </LogoGrid>
+	<LogoGrid id="tech-stack">
+		<span slot="heading">Our Tech Stack</span>
+		<LogoElement
+			src="/images/logo_grid/postgresql_logo.svg"
+			alt="PostgreSQL"
+			href=""
+		/>
+		<LogoElement src="/images/logo_grid/redis_logo.svg" alt="Redis" />
+		<LogoElement
+			src="/images/logo_grid/chatwoot_logo.svg"
+			alt="Chatwoot"
+			href=""
+		/>
+		<LogoElement src="/images/logo_grid/n8n_logo.svg" alt="n8n" />
+		<LogoElement
+			src="/images/logo_grid/portainer_logo.svg"
+			alt="Portainer"
+			href=""
+		/>
+		<LogoElement
+			src="/images/logo_grid/directus_logo.svg"
+			alt="Directus"
+			href=""
+		/>
+		<LogoElement src="/images/logo_grid/hasura_logo.svg" alt="Hasura" />
+		<LogoElement
+			src="/images/logo_grid/typebot_logo.svg"
+			alt="Typebot"
+			href=""
+		/>
+	</LogoGrid>
 
-  <CallToAction
-    id="invest-cta"
-    buttonText="Invest Now"
-    buttonLink="/investment-opportunities"
-  >
-    <span slot="header">Discover Investment Opportunities</span>
-     Join us in shaping the future of healthcare. Explore investment
-    opportunities with Mends and be part of the revolution.
-  </CallToAction>
-  <Feature
-    id="empathy"
-    imageUrl="/images/landing/feedback_4342417.svg"
-    imageAlt="Empathy"
-  >
-    <span slot="heading">
-      <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
-        >Empathy</span
-      > in Action: Crafting Compassionate Care at Mends
-    </span>
-    <span slot="paragraph">
-      Mends elevates Empathy into our technology, ensuring our AI offers
-      personalized, human-centric care.
-      <br /><br />
-       By integrating AI-driven insights tailored to individual health goals and
-      providing compassionate support, <strong
-        >we create a healthcare experience that's both caring and attentive</strong
-      >, mirroring the comfort of a trusted healthcare provider.
-    </span>
-  </Feature>
+	<CallToAction
+		id="invest-cta"
+		buttonText="Invest Now"
+		buttonLink="/investment-opportunities"
+	>
+		<span slot="header">Discover Investment Opportunities</span>
+		Join us in shaping the future of healthcare. Explore investment opportunities
+		with Mends and be part of the revolution.
+	</CallToAction>
+	<Feature
+		id="empathy"
+		imageUrl="/images/landing/feedback_4342417.svg"
+		imageAlt="Empathy"
+	>
+		<span slot="heading">
+			<span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+				>Empathy</span
+			> in Action: Crafting Compassionate Care at Mends
+		</span>
+		<span slot="paragraph">
+			Mends elevates Empathy into our technology, ensuring our AI offers
+			personalized, human-centric care.
+			<br /><br />
+			By integrating AI-driven insights tailored to individual health goals and providing
+			compassionate support, <strong
+				>we create a healthcare experience that's both caring and attentive</strong
+			>, mirroring the comfort of a trusted healthcare provider.
+		</span>
+	</Feature>
 
-  <Feature
-    id="nimblesness"
-    imageUrl="/images/landing/synchronization_1766998.svg"
-    imageAlt="Nimbleness"
-    reverse
-  >
-    <span slot="heading">
-      Agility in Action: Embracing Change with <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
-        >Nimble</span
-      > Solutions
-    </span>
-    <span slot="paragraph">
-      Mends excels in agility, <strong
-        >quickly adapting to health trends and user feedback</strong
-      > with our advanced AI and telemedicine services.
-      <br /><br />
-       This flexibility ensures we lead in healthcare innovation, addressing
-      future challenges today.
-    </span>
-  </Feature>
+	<Feature
+		id="nimblesness"
+		imageUrl="/images/landing/synchronization_1766998.svg"
+		imageAlt="Nimbleness"
+		reverse
+	>
+		<span slot="heading">
+			Agility in Action: Embracing Change with <span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+				>Nimble</span
+			> Solutions
+		</span>
+		<span slot="paragraph">
+			Mends excels in agility, <strong
+				>quickly adapting to health trends and user feedback</strong
+			> with our advanced AI and telemedicine services.
+			<br /><br />
+			This flexibility ensures we lead in healthcare innovation, addressing future
+			challenges today.
+		</span>
+	</Feature>
 
-  <LogoGrid id="embedded-technologies">
-    <span slot="heading">Embedded Technologies</span>
-    <LogoElement src="/images/logo_grid/openai_logo.svg" alt="OpenAI" href="" />
-    <LogoElement src="/images/logo_grid/deepl_logo.svg" alt="DeepL" href="" />
-  </LogoGrid>
+	<LogoGrid id="embedded-technologies">
+		<span slot="heading">Embedded Technologies</span>
+		<LogoElement src="/images/logo_grid/openai_logo.svg" alt="OpenAI" />
+		<LogoElement src="/images/logo_grid/google_cloud_logo.svg" alt="Google Cloud" />
+		<LogoElement src="/images/logo_grid/deepl_logo.svg" alt="DeepL" />
+	</LogoGrid>
 
-  <Feature
-    id="diversity"
-    imageUrl="/images/landing/puzzle_5417957.svg"
-    imageAlt="Diversity"
-  >
-    <span slot="heading">
-      Embracing <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
-        >Diversity</span
-      >: Mends' Global Vision</span
-    >
-    <span slot="paragraph">
-      Mends champions Diversity, ensuring our AI and team reflect a global
-      perspective for inclusive healthcare.
-      <br /><br />
-       This approach allows us to address diverse health needs effectively,
-      <strong>making healthcare accessible and personalized for all.</strong>
-    </span>
-  </Feature>
+	<Feature
+		id="diversity"
+		imageUrl="/images/landing/puzzle_5417957.svg"
+		imageAlt="Diversity"
+	>
+		<span slot="heading">
+			Embracing <span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+				>Diversity</span
+			>: Mends' Global Vision</span
+		>
+		<span slot="paragraph">
+			Mends champions Diversity, ensuring our AI and team reflect a global
+			perspective for inclusive healthcare.
+			<br /><br />
+			This approach allows us to address diverse health needs effectively,
+			<strong>making healthcare accessible and personalized for all.</strong>
+		</span>
+	</Feature>
 
-  <Feature
-    id="sustainability"
-    imageUrl="/images/landing/tag_4405535.svg"
-    imageAlt="Sustainability"
-    reverse
-  >
-    <span slot="heading">
-      A Greener Future: Mends' Commitment to <span
-        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
-        >Sustainability</span
-      >
-    </span>
-    <span slot="paragraph">
-      Mends prioritizes Sustainability, <strong
-        >embedding eco-friendly practices and green technologies</strong
-      > in our operations and healthcare solutions.
-      <br /><br />
-       This commitment not only aims for a healthier planet but also sets a
-      precedent for future-oriented, sustainable healthcare innovations.
-    </span>
-  </Feature>
-  <CallToAction
-    id="contact-cta"
-    buttonText="Contact Us"
-    buttonLink="mailto:contact@mends.eu"
-  >
-    <span slot="header">Connect With Mends</span>
-     Reach out to explore how we can transform healthcare together. Your journey
-    towards impactful collaboration starts here.
-  </CallToAction>
+	<Feature
+		id="sustainability"
+		imageUrl="/images/landing/tag_4405535.svg"
+		imageAlt="Sustainability"
+		reverse
+	>
+		<span slot="heading">
+			A Greener Future: Mends' Commitment to <span
+				class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+				>Sustainability</span
+			>
+		</span>
+		<span slot="paragraph">
+			Mends prioritizes Sustainability, <strong
+				>embedding eco-friendly practices and green technologies</strong
+			> in our operations and healthcare solutions.
+			<br /><br />
+			This commitment not only aims for a healthier planet but also sets a precedent
+			for future-oriented, sustainable healthcare innovations.
+		</span>
+	</Feature>
+	<CallToAction
+		id="contact-cta"
+		buttonText="Contact Us"
+		buttonLink="mailto:contact@mends.eu"
+	>
+		<span slot="header">Connect With Mends</span>
+		Reach out to explore how we can transform healthcare together. Your journey towards
+		impactful collaboration starts here.
+	</CallToAction>
 </Layout>
