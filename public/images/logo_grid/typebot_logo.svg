@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0042DA;}
+	.st1{fill:#FF8E20;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FF8E20;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<g>
+	<path class="st0" d="M60,0h680c33.1,0,60,26.9,60,60v680c0,33.1-26.9,60-60,60H60c-33.1,0-60-26.9-60-60V60C0,26.9,26.9,0,60,0z"/>
+	<path class="st1" d="M650,313v45.5c0,11-9,20-20,20H285.4c-11,0-20-9-20-20V313c0-11,9-20,20-20H630C641,293,650,302,650,313z"/>
+	<path class="st2" d="M192.7,378.5c23.6,0,42.7-19.1,42.7-42.7c0-23.6-19.1-42.7-42.7-42.7S150,312.1,150,335.7
+		C150,359.3,169.1,378.5,192.7,378.5z"/>
+	<path class="st3" d="M150,486.7v-45.5c0-11,9-20,20-20h344.6c11,0,20,9,20,20v45.5c0,11-9,20-20,20H170
+		C159,506.7,150,497.7,150,486.7z"/>
+	<path class="st4" d="M607.3,421.2c-23.6,0-42.7,19.1-42.7,42.7c0,23.6,19.1,42.7,42.7,42.7s42.7-19.1,42.7-42.7
+		C650,440.3,630.9,421.2,607.3,421.2z"/>
+</g>
+</svg>
