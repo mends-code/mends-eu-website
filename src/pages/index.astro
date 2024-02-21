@@ -2,19 +2,30 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
 import Feature from "../components/sections/Feature.astro";
-const title = "Mends";
-const description = "Learn more about our company and values.";
-const navLinks = [
-  { text: "Motivation", href: "#motivation" },
-  { text: "Empathy", href: "#empathy" },
-  { text: "Nimbleness", href: "#nimblesness" },
-  { text: "Diversity", href: "#diversity" },
-  { text: "Sustainability", href: "#sustainability" },
-];
-const lang = "pl";
+import CallToAction from "../components/sections/CallToAction.astro";
+
+const {
+  title = "Pioneering Sustainable Healthcare through AI & Telemedicine",
+  description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
+  image = "/default-social-image.png",
+  navLinks = [
+    { text: "Motivation", href: "#motivation" },
+    { text: "Empathy", href: "#empathy" },
+    { text: "Nimbleness", href: "#nimblesness" },
+    { text: "Diversity", href: "#diversity" },
+    { text: "Sustainability", href: "#sustainability" },
+  ],
+  lang = "en",
+} = Astro.props;
 ---
 
-<Layout title={title} description={description} navLinks={navLinks} lang={lang}>
+<Layout
+  title={title}
+  image={image}
+  description={description}
+  lang={lang}
+  navLinks={navLinks}
+>
   <HeroSection
     imageAlt="Transforming Healthcare"
     imageUrl="/images/launch_2909658.svg"
@@ -107,9 +118,9 @@ const lang = "pl";
   >
     <span slot="heading">
       Agility in Action: Embracing Change with <span
-      class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
-      >Nimble</span
-    > Solutions
+        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+        >Nimble</span
+      > Solutions
     </span>
     <span slot="paragraph">
       Mends excels in agility, <strong
@@ -126,10 +137,12 @@ const lang = "pl";
     imageUrl="/images/puzzle_5417957.svg"
     imageAlt="Diversity"
   >
-    <span slot="heading"> Embracing <span
-      class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
-      >Diversity</span
-    >: Mends' Global Vision</span>
+    <span slot="heading">
+      Embracing <span
+        class="font-display uppercase text-transparent bg-gradient-to-b from-apricot via-brandy to-frost bg-clip-text"
+        >Diversity</span
+      >: Mends' Global Vision</span
+    >
     <span slot="paragraph">
       Mends champions Diversity, ensuring our AI and team reflect a global
       perspective for inclusive healthcare.
@@ -147,9 +160,9 @@ const lang = "pl";
   >
     <span slot="heading">
       A Greener Future: Mends' Commitment to <span
-      class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
-      >Sustainability</span
-    >
+        class="font-display uppercase text-transparent bg-gradient-to-b from-matisse via-hippie-blue to-pale-leaf bg-clip-text"
+        >Sustainability</span
+      >
     </span>
     <span slot="paragraph">
       Mends prioritizes Sustainability, <strong
@@ -160,22 +173,13 @@ const lang = "pl";
       precedent for future-oriented, sustainable healthcare innovations.
     </span>
   </Feature>
-
-  <section class="bg-matisse text-white py-12 md:py-24">
-    <div class="container mx-auto px-4 text-center max-w-xl">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-        Join the Healthcare Revolution
-      </h2>
-      <p class="text-lg md:text-xl mb-8">
-        Invest in a future where healthcare meets humanity. Partner with Mends
-        to make a lasting impact on global health.
-      </p>
-      <a
-        href="mailto:contact@mends.eu"
-        class="inline-block bg-rhino hover:bg-brandy text-white hover:text-rhino font-bold py-2 px-6 rounded-full transition duration-300"
-      >
-        Make an Impact
-      </a>
-    </div>
-  </section>
+  <CallToAction
+    id="cta-section"
+    buttonText="Make an Impact"
+    buttonLink="mailto:contact@mends.eu"
+  >
+    <div slot="header">Join the Healthcare Revolution</div>
+     Invest in a future where healthcare meets humanity. Partner with Mends to
+    make a lasting impact on global health.
+  </CallToAction>
 </Layout>

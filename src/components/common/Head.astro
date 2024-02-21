@@ -1,52 +1,58 @@
 ---
 // Head.astro
+import "/src/styles/global.css";
+import { ViewTransitions } from "astro:transitions";
+import Unfont from "unplugin-fonts/astro/component.astro";
+import { SEO } from "astro-seo";
+
 interface Props {
-	title?: string;
-	description?: string;
-	image?: string;
-	url?: string;
+  title?: string;
+  titleTemplate?: string;
+  titleDefault?: string;
+  description?: string;
+  image?: string;
+  url?: URL | string;
+  type?: string;
 }
 
 const {
-	title,
-	description = 'Default description if none provided',
-	image = '/default-social-image.png',
-	url = Astro.url,
+  title = "Mends — Pioneering Sustainable Healthcare through AI & Telemedicine", // Provide a more meaningful default title if possible
+  titleTemplate = "Mends — %s",
+  titleDefault = "mends.eu — our's startup website",
+  description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
+  image = "/default-social-image.png",
+  url = Astro.url,
+  type = "website",
 } = Astro.props;
-
-import '/src/styles/global.css';
-import { ViewTransitions } from 'astro:transitions';
-import Unfont from 'unplugin-fonts/astro/component.astro';
-import { SEO } from "astro-seo";
 ---
 
 <head>
-	<meta charset="UTF-8" />
-	<title>{title}</title>
-	<meta name="description" content={description} />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1.0"
-	/>
-<!--	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-	/>  -->
-	<meta name="generator" content="Astro" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content={url} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={image} />
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content={url} />
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:description" content={description} />
-	<meta property="twitter:image" content={image} />
-	<link rel="canonical" href={url} />
-	<link rel="sitemap" href="/sitemap-index.xml" />
-	<meta name="theme-color" content="#ffffff" />
-	<ViewTransitions />
-	<Unfont />
+  <meta charset="UTF-8" />
+  <SEO
+    title={title}
+    titleDefault={titleDefault}
+    titleTemplate={titleTemplate}
+    description={description}
+    openGraph={{
+      basic: {
+		url: `${url}`,
+		type: `${type}`,
+        title: `${title}`,
+        image: `${image}`,
+      },
+    }}
+    twitter={{
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      image: image,
+    }}
+  />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href={url} />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <ViewTransitions />
+  <Unfont />
 </head>

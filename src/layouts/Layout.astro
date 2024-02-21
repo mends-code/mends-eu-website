@@ -8,23 +8,32 @@ import NavigationButton from '../components/common/NavigationButton.astro';
 
 interface LayoutProps {
 	title: string;
+	titleTemplate?: string;
+	titleDefault?: string;
 	description: string;
+	image: string;
 	lang: string;
+	type: string;
 	navActive?: boolean;
 	navLinks?: { text: string; href: string }[];
 }
 
 const {
-	title,
-	description,
-	lang,
-	navActive = true,
-	navLinks = [],
+  title = "Mends — Pioneering Sustainable Healthcare through AI & Telemedicine", // Provide a more meaningful default title if possible
+  titleTemplate = "Mends — %s",
+  titleDefault = "mends.eu — our's startup website",
+  description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
+  image = "/default-social-image.png",
+  type = "website",
+  lang = "en",
+  navActive = true,
+  navLinks = [],
 } = Astro.props as LayoutProps;
+
 ---
 
 <html lang={lang}>
-	<Head title={title} description={description} />
+	<Head title={title} titleTemplate= {titleTemplate} titleDefault={titleDefault} image={image} type={type} description={description} />
 	<body
 		x-data="{ showNav: false, navStyle: '', updateNavStyle() { const mainContainer = this.$refs.mainContainer; if (mainContainer) { this.navStyle = `width: ${mainContainer.offsetWidth}px; height: ${mainContainer.offsetHeight}px; top: ${mainContainer.offsetTop}px; left: ${mainContainer.offsetLeft}px;`;}}}"
 		class="container mx-auto"
