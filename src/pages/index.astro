@@ -90,8 +90,18 @@ const {
     </span>
   </Feature>
 
-  <LogoGrid>
+  <LogoGrid id="tech-stack">
     <span slot="heading">Our Tech Stack</span>
+    <LogoElement
+      src="/images/logo_grid/postgresql_logo.svg"
+      alt="PostgreSQL"
+      href=""
+    />
+    <LogoElement
+      src="/images/logo_grid/redis_logo.svg"
+      alt="Redis"
+      href=""
+    />
     <LogoElement
       src="/images/logo_grid/chatwoot_logo.svg"
       alt="Chatwoot"
@@ -115,15 +125,15 @@ const {
       href=""
     />
   </LogoGrid>
-  
+
   <CallToAction
-    id="cta-section"
-    buttonText="Make an Impact"
-    buttonLink="mailto:contact@mends.eu"
+    id="invest-cta"
+    buttonText="Invest Now"
+    buttonLink="/investment-opportunities"
   >
-    <span slot="header">Join the Healthcare Revolution</span>
-     Invest in a future where healthcare meets humanity. Partner with Mends to
-    make a lasting impact on global health.
+    <span slot="header">Discover Investment Opportunities</span>
+     Join us in shaping the future of healthcare. Explore investment
+    opportunities with Mends and be part of the revolution.
   </CallToAction>
   <Feature
     id="empathy"
@@ -169,6 +179,12 @@ const {
     </span>
   </Feature>
 
+  <LogoGrid id="embedded-technologies">
+    <span slot="heading">Embedded Technologies</span>
+    <LogoElement src="/images/logo_grid/openai_logo.svg" alt="OpenAI" href="" />
+    <LogoElement src="/images/logo_grid/deepl_logo.svg" alt="DeepL" href="" />
+  </LogoGrid>
+
   <Feature
     id="diversity"
     imageUrl="/images/landing/puzzle_5417957.svg"
@@ -211,13 +227,12 @@ const {
     </span>
   </Feature>
   <CallToAction
-    id="cta-section"
-    buttonText="Make an Impact"
+    id="contact-cta"
+    buttonText="Contact Us"
     buttonLink="mailto:contact@mends.eu"
   >
-    <span slot="header">Join the Healthcare Revolution</span>
-     Invest in a future where healthcare meets humanity. Partner with Mends to
-    make a lasting impact on global health.
+    <span slot="header">Connect With Mends</span>
+     Reach out to explore how we can transform healthcare together. Your journey
+    towards impactful collaboration starts here.
   </CallToAction>
-
 </Layout>
