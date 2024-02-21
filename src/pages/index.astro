@@ -9,6 +9,7 @@ import LogoElement from '../components/elements/LogoElement.astro';
 const {
 	title = 'Pioneering Sustainable Healthcare through AI & Telemedicine',
 	description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
+  image = "/images/fallback/fallback_social.jpg",
 	navLinks = [
 		{ text: 'Motivation', href: '#motivation' },
 		{ text: 'Empathy', href: '#empathy' },
@@ -20,7 +21,7 @@ const {
 } = Astro.props;
 ---
 
-<Layout title={title} description={description} lang={lang} navLinks={navLinks}>
+<Layout title={title} description={description} lang={lang} navLinks={navLinks} image={image}>
 	<HeroSection
 		imageAlt="Transforming Healthcare"
 		imageUrl="/images/landing/launch_2909658.svg"
