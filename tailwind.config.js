@@ -108,6 +108,15 @@ export default {
           DEFAULT: "#ee8a66",
         },
       },
+      keyframes: {
+        scroll: {
+          from: { transform: "translateX(0%)" },
+          to: { transform: "translateX(-100%)" }, // Moves only 50% to account for the duplicated content
+        },
+      },
+      animation: {
+        scroll: "scroll 10s linear infinite",
+      },
     },
   },
   plugins: [],

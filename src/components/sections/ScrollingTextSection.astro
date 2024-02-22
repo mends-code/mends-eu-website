@@ -1,0 +1,34 @@
+---
+// Define the props for the component
+interface Props {
+  duration?: string;
+  id?: string;
+}
+
+const { duration = "60s", id } = Astro.props as Props; // Default to 30 seconds if not specified
+---
+<section id={id}
+  x-data="{ shift: false }"
+  @animationiteration.window="shift = !shift"
+  class="overflow-hidden whitespace-nowrap w-full flex text-6xl font font-bold bg-rhino leading-loose text-white"
+>
+  <!-- First group of text -->
+  <div
+    class=`flex animate-[scroll_linear_infinite]` 
+    :class="{ 'order-1': !shift, 'order-2': shift }"
+    style=`animation-duration: ${duration};`
+    @animationiteration="shift = true"
+  >
+    <slot />
+  </div>
+  
+  <!-- Second group of text -->
+  <div
+    class="flex animate-[scroll_linear_infinite]"
+    :class="{ 'order-2': !shift, 'order-1': shift }"
+    style=`animation-duration: ${duration};`
+    @animationiteration="shift = false"
+  >
+    <slot />
+  </div>
+</section>
