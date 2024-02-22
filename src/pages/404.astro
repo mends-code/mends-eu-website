@@ -1,18 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/GenericLayout.astro';
 
 const title = 'Mends';
 const description = 'Learn more about our company and values.';
-const navActive = false;
 ---
 
-<Layout title={title} description={description} navActive={navActive}>
+<Layout title={title} description={description}>
 	<section
 		class="h-full flex flex-col items-center justify-center text-center px-4"
 	>
 		<div class="max-w-md mx-auto">
 			<img
-				src="/images/galaxy_2909555.svg"
+				src="/images/fallback/galaxy_2909555.svg"
 				alt="Lost in Healthcare"
 				class="max-w-sm mx-auto mb-8 p-10"
 			/>
