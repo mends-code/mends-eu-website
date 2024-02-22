@@ -8,7 +8,7 @@ const { src, alt, href = 'javascript:void(0);' } = Astro.props as LogoElementPro
 ---
 
 <div class="group inline-block relative">
-  <img src={src} alt={alt} class="h-12 md:h-18 lg:h-24 aspect-square transition-opacity duration-300 ease-in-out m-4" loading="lazy" />
+  <img src={src} alt={alt} class="h-12 md:h-16 lg:h-20 aspect-square transition-opacity duration-300 ease-in-out m-4" loading="lazy" />
   <div class="absolute inset-0 bg-white bg-opacity-80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 ease-in-out backdrop-blur-sm">
     <div class="text-xl md:text-2xl font-bold text-rhino px-2 text-center">{alt}</div>
   </div>

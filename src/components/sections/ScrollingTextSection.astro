@@ -10,7 +10,7 @@ const { duration = "60s", id } = Astro.props as Props; // Default to 30 seconds 
 <section id={id}
   x-data="{ shift: false }"
   @animationiteration.window="shift = !shift"
-  class="overflow-hidden whitespace-nowrap w-full flex text-6xl font font-bold bg-rhino leading-loose text-white"
+  class="overflow-hidden whitespace-nowrap w-full flex text-2xl md:text-3xl lg:text-4xl font font-bold bg-rhino leading-loose text-white py-2 md:py-4 lg:py-6 xl:py-8"
 >
   <!-- First group of text -->
   <div
