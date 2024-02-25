@@ -11,19 +11,24 @@ const navLinks: NavLink[] = Astro.props.navLinks;
 <nav
   x-show="showNav"
   x-cloak
-  x-transition.opacity
+  x-transition:enter="transition ease-out duration-300"
+  x-transition:enter-start="opacity-0 bg-opacity-0"
+  x-transition:enter-end="opacity-100 bg-opacity-50"
+  x-transition:leave="transition ease-in duration-300"
+  x-transition:leave-start="opacity-100 bg-opacity-50"
+  x-transition:leave-end="opacity-0 bg-opacity-0"
   @click="showNav = false"
   :style="navStyle"
-  :class="showNav ? '' : 'hidden'"
-  class="absolute z-50 overflow-auto px-10 shadow-xl rounded-3xl bg-hippie-blue h-auto"
+  :class="showNav ? 'opacity-100' : 'opacity-0'"
+  class="absolute z-50 overflow-auto px-10 rounded-3xl bg-hippie-blue h-auto bg-opacity-50 backdrop-blur-lg"
 >
   <ul
     class="flex grow-1 flex-col h-full w-full justify-center content-center gap-0 font-display"
   >
     {
       navLinks.map((link) => (
-        <li class="text-center uppercase text-2xl text-white flex hover:text-frost transition-colors">
-          <a class="w-full p-4" href={link.href}>
+        <li class="justify-center flex">
+          <a class="p-4 text-center uppercase text-2xl text-rhino flex hover:bg-white rounded-full transition-colors w-fit" href={link.href}>
             {link.text}
           </a>
         </li>
