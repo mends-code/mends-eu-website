@@ -19,7 +19,7 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   x-transition:leave-end="opacity-0 bg-opacity-0"
   @click="showNav = false"
   :style="navStyle"
-  :class="showNav ? 'opacity-100' : 'opacity-0'"
+  :class="showNav ? 'opacity-100' : 'opacity-0 hidden'"
   class="absolute z-50 overflow-auto px-10 rounded-3xl bg-hippie-blue h-auto bg-opacity-50 backdrop-blur-lg"
 >
   <ul
