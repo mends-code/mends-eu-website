@@ -11,10 +11,12 @@ interface Props {
 const { id, imageUrl, imageAlt, reverse = false } = Astro.props as Props;
 ---
 
-<section class={`py-12 md:py-24 ${reverse ? "" : "bg-white"}`} id={id}>
+<section class="py-12 md:py-24" id={id}>
   <div class="container mx-auto px-8">
     <div
-      class={`flex flex-wrap ${reverse ? "flex-row md:flex-row-reverse" : "flex-row "} items-center justify-center`}
+      class={`flex flex-wrap ${
+        reverse ? "flex-row md:flex-row-reverse" : "flex-row "
+      } items-center justify-center`}
     >
       <div class="w-full md:w-1/2 mb-8 md:mb-0 max-w-lg">
         <h2
@@ -26,14 +28,30 @@ const { id, imageUrl, imageAlt, reverse = false } = Astro.props as Props;
           <slot name="paragraph" />
         </p>
       </div>
-      <div class="w-full md:w-1/2 flex justify-center">
-        {imageUrl && (
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            class="max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square"
-          />
-        )}
+      <div class="w-full md:w-1/2 flex justify-center relative">
+        <!-- Blurred Background Image -->
+        {
+          imageUrl && (
+            <div class="absolute inset-0 flex justify-center items-center">
+              <img
+                src={imageUrl}
+                alt=""
+                aria-hidden="true"
+                class="blur-lg transform scale-105 max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square"
+              />
+            </div>
+          )
+        }
+        <!-- Original Image -->
+        {
+          imageUrl && (
+            <img
+              src={imageUrl}
+              alt={imageAlt}
+              class="relative z-10 max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square"
+            />
+          )
+        }
       </div>
     </div>
   </div>
