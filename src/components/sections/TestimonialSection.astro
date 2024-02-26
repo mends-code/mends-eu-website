@@ -1,0 +1,18 @@
+---
+// TestimonialSection.astro
+const { id } = Astro.props;
+---
+
+<section id={id} class="testimonial-section py-12">
+  <h2
+    class="text-5xl md:text-6xl lg:text-7 xl:text-8 font-bold mb-6 font-display uppercase text-transparent bg-gradient-to-b from-hippie-blue via-pale-leaf to-frost bg-clip-text text-center px-8"
+  >
+    <slot name="header" />
+  </h2>
+
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-center items-center gap-4">
+      <slot />
+    </div>
+  </div>
+</section>
