@@ -20,13 +20,13 @@ const { imageAlt, imageUrl, buttonText, buttonLink, id } = Astro.props;
       src={imageUrl}
       alt=""
       aria-hidden="true"
-      class="absolute max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square px-6 -z-10 blur-lg transform scale-105"
+      class="absolute max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square px-6 blur-lg transform scale-105"
     />
     <!-- Original Image -->
     <img
       src={imageUrl}
       alt={imageAlt}
-      class="max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square px-6 z-0"
+      class="max-w-xs md:max-w-sm lg:max-w-md w-full h-full aspect-square px-6 z-10"
     />
   </div>
   <div
