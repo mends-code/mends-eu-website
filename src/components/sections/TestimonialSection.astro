@@ -4,6 +4,11 @@ const { id } = Astro.props;
 ---
 
 <section id={id} class="testimonial-section py-12">
+  <div
+    class="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-matisse font-bold px-8 text-center"
+  >
+    <slot name="subheader" />
+  </div>
   <h2
     class="text-5xl md:text-6xl lg:text-7 xl:text-8 font-bold mb-6 font-display uppercase text-transparent bg-gradient-to-b from-hippie-blue via-pale-leaf to-frost bg-clip-text text-center px-8"
   >
