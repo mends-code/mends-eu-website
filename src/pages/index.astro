@@ -8,19 +8,19 @@ import LogoElement from "../components/elements/LogoElement.astro";
 import ScrollingTextSection from "../components/sections/ScrollingTextSection.astro";
 import TestimonialSection from "../components/sections/TestimonialSection.astro";
 import TestimonialElement from "../components/elements/TestimonialElement.astro";
+import { nodeModuleNameResolver } from "typescript";
 
 const {
   title = "Pioneering Sustainable Healthcare through AI & Telemedicine",
   description = "Mends is transforming healthcare with AI-driven solutions and telemedicine, focusing on accessibility, patient care, and sustainability. Discover how we're shaping the future of healthcare for a better tomorrow.",
   image = "/images/fallback/fallback_social.jpeg",
   navLinks = [
-    { text: "Motivation", href: "#motivation" },
-    { text: "Empathy", href: "#empathy" },
-    { text: "Nimbleness", href: "#nimblesness" },
-    { text: "Diversity", href: "#diversity" },
-    { text: "Sustainability", href: "#sustainability" },
+    { text: "Values", href: "#values" },
     { text: "Testimonials", href: "#testimonials" },
     { text: "Contact", href: "#contact" },
+    { text: "FAQ (soon)", href: null },
+    { text: "About Us (soon)", href: null },
+    { text: "How To Invest (soon)", href: null },
   ],
   lang = "en",
 } = Astro.props;
