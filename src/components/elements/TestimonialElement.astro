@@ -1,0 +1,20 @@
+---
+// TestimonialElement.astro
+const { content, signature, description, readOnUrl, readOnText = "Read more" } = Astro.props;
+---
+
+<div class="testimonial-element max-w-sm p-4 bg-white rounded-lg shadow-xl">
+  <blockquote class="mb-4">
+    <p class="text-lg font-medium text-rhino">"{content}"</p>
+  </blockquote>
+  <figcaption class="testimonial-signature">
+    <p class="font-bold text-matisse">{signature}</p>
+    <p class="text-sm text-rhino">{description}</p>
+    {/* Optional "Read on" link */}
+    {readOnUrl && (
+      <a href={readOnUrl} class="text-hippie-blue hover:text-matisse text-sm font-bold mt-2" target="_blank" rel="noopener noreferrer">
+        {readOnText}
+      </a>
+    )}
+  </figcaption>
+</div>
