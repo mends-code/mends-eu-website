@@ -12,14 +12,14 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   x-show="showNav"
   x-cloak
   x-transition:enter="transition ease-out duration-300"
-  x-transition:enter-start="opacity-0 bg-opacity-0"
-  x-transition:enter-end="opacity-100 bg-opacity-30"
+  x-transition:enter-start="opacity-0 bg-opacity-0 !block"
+  x-transition:enter-end="opacity-100 bg-opacity-30 !block"
   x-transition:leave="transition ease-in duration-300"
-  x-transition:leave-start="opacity-100 bg-opacity-30"
-  x-transition:leave-end="opacity-0 bg-opacity-0"
+  x-transition:leave-start="opacity-100 bg-opacity-30 !block"
+  x-transition:leave-end="opacity-0 bg-opacity-0 !block"
   @click="showNav = false"
   :style="navStyle"
-  :class="showNav ? '' : ''"
+  :class="showNav ? '' : 'hidden'"
   class="absolute overflow-auto px-10 rounded-3xl bg-hippie-blue h-auto bg-opacity-30 backdrop-blur-lg transition-opacity no-scrollbar z-50"
 >
   <ul

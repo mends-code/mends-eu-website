@@ -37,7 +37,7 @@ const {
 		x-data="{ showNav: false, navStyle: '', updateNavStyle() { const mainContainer = this.$refs.mainContainer; if (mainContainer) { this.navStyle = `width: ${mainContainer.offsetWidth}px; height: ${mainContainer.offsetHeight}px; top: ${mainContainer.offsetTop}px; left: ${mainContainer.offsetLeft}px;`;}}}"
 		class="container mx-auto"
 		x-init="updateNavStyle()"
-		@resize.window="showNav && updateNavStyle()"
+		@resize.window="updateNavStyle()"
 	>
 		<div
 			class="h-full container w-full fixed grid grid-rows-[fit-content(100%)_1fr_fit-content(100%)] grid-cols-[1fr] grid-flow-row gap-0"
