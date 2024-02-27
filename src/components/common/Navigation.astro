@@ -20,15 +20,15 @@ const navLinks: NavLink[] = Astro.props.navLinks;
   @click="showNav = false"
   :style="navStyle"
   :class="showNav ? '' : 'hidden'"
-  class="absolute overflow-auto px-10 rounded-3xl bg-hippie-blue h-auto bg-opacity-30 backdrop-blur-lg transition-opacity no-scrollbar z-50"
+  class="absolute overflow-auto px-10 rounded-3xl bg-white h-auto bg-opacity-70 backdrop-blur-lg transition-opacity no-scrollbar z-50"
 >
   <ul
-    class="flex grow-1 flex-col h-full w-full justify-center content-center gap-4"
+    class="flex grow-1 flex-col h-full w-full justify-center content-center gap-2"
   >
     {
       navLinks.map((link) => (
         <li class="justify-center flex">
-          <a class="py-6 px-12 text-center font-bold uppercase text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-widest align-middle text-rhino flex hover:bg-white hover:bg-opacity-70 rounded-xl transition-colors w-fit" href={link.href}>
+          <a class="py-4 px-8 text-center font-bold uppercase text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-widest align-middle text-rhino flex hover:bg-hippie-blue hover:bg-opacity-30 rounded-xl transition-colors w-fit" href={link.href}>
             {link.text}
           </a>
         </li>

@@ -1,9 +1,9 @@
 ---
-import Layout from "../layouts/GenericLayout.astro";
+import GenericLayout from "../layouts/GenericLayout.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
-import Feature from "../components/sections/FeatureSection.astro";
-import CallToAction from "../components/sections/CallToActionSection.astro";
-import LogoGrid from "../components/sections/LogoSection.astro";
+import FeatureSection from "../components/sections/FeatureSection.astro";
+import CallToActionSection from "../components/sections/CallToActionSection.astro";
+import LogoSection from "../components/sections/LogoSection.astro";
 import LogoElement from "../components/elements/LogoElement.astro";
 import ScrollingTextSection from "../components/sections/ScrollingTextSection.astro";
 import TestimonialSection from "../components/sections/TestimonialSection.astro";
@@ -19,12 +19,14 @@ const {
     { text: "Nimbleness", href: "#nimblesness" },
     { text: "Diversity", href: "#diversity" },
     { text: "Sustainability", href: "#sustainability" },
+    { text: "Testimonials", href: "#testimonials" },
+    { text: "Contact", href: "#contact" },
   ],
   lang = "en",
 } = Astro.props;
 ---
 
-<Layout
+<GenericLayout
   title={title}
   description={description}
   lang={lang}
@@ -49,7 +51,7 @@ const {
     you closer to your health goals, wherever you are.
   </HeroSection>
 
-  <Feature
+  <FeatureSection
     id="values"
     imageUrl="/images/landing/universe_2909502.svg"
     imageAlt="Our Values"
@@ -68,9 +70,9 @@ const {
        These principles are not just what we do; they're who we are, guiding us
       to revolutionize healthcare.
     </span>
-  </Feature>
+  </FeatureSection>
 
-  <Feature
+  <FeatureSection
     id="motivation"
     imageUrl="/images/landing/energy_4405428.svg"
     imageAlt="Motivation"
@@ -91,9 +93,9 @@ const {
       <strong>We're dedicated to advancing healthcare</strong> through AI and
       telemedicine, making top-quality care accessible to all.
     </span>
-  </Feature>
+  </FeatureSection>
 
-  <LogoGrid id="tech-stack">
+  <LogoSection id="tech-stack">
     <span slot="header">Our Tech Stack</span>
     <LogoElement src="/images/logo_grid/postgresql_logo.svg" alt="PostgreSQL" />
     <LogoElement src="/images/logo_grid/redis_logo.svg" alt="Redis" />
@@ -107,14 +109,14 @@ const {
     <LogoElement src="/images/logo_grid/astro_logo.svg" alt="Astro" />
     <LogoElement src="/images/logo_grid/tailwindcss_logo.svg" alt="Tailwind CSS" />
     <LogoElement src="/images/logo_grid/plausible_logo.svg" alt="Plausible" />
-  </LogoGrid>
+  </LogoSection>
 
-  <CallToAction id="invest-cta" buttonText="Invest Now (soon)">
+  <CallToActionSection id="invest" buttonText="Invest Now (soon)">
     <span slot="header">Discover Investment Opportunities</span>
      Join us in shaping the future of healthcare. Explore investment
     opportunities with Mends and be part of the revolution.
-  </CallToAction>
-  <Feature
+  </CallToActionSection>
+  <FeatureSection
     id="empathy"
     imageUrl="/images/landing/feedback_4342417.svg"
     imageAlt="Empathy"
@@ -134,9 +136,9 @@ const {
         >we create a healthcare experience that's both caring and attentive</strong
       >, mirroring the comfort of a trusted healthcare provider.
     </span>
-  </Feature>
+  </FeatureSection>
 
-  <Feature
+  <FeatureSection
     id="nimblesness"
     imageUrl="/images/landing/synchronization_1766998.svg"
     imageAlt="Nimbleness"
@@ -156,9 +158,9 @@ const {
        This flexibility ensures we lead in healthcare innovation, addressing
       future challenges today.
     </span>
-  </Feature>
+  </FeatureSection>
 
-  <LogoGrid id="embedded-technologies">
+  <LogoSection id="embedded-technologies">
     <span slot="header">Embedded Technologies</span>
     <LogoElement src="/images/logo_grid/openai_logo.svg" alt="OpenAI" />
     <LogoElement
@@ -167,7 +169,7 @@ const {
     />
     <LogoElement src="/images/logo_grid/postmark_logo.svg" alt="Postmark" />
     <LogoElement src="/images/logo_grid/deepl_logo.svg" alt="DeepL" />
-  </LogoGrid>
+  </LogoSection>
   <ScrollingTextSection id="opportunities" duration="120s">
     🚀 25.8% CAGR in Telemedicine by 2027: A Market on the Rise! 📈 💸 Poles'
     Earnings Abroad Hit Record 154.5B PLN: A Surge in Overseas Income! 💰 🌍 90%
@@ -176,7 +178,7 @@ const {
     Growing at 17.2% CAGR! 🚀 North America Dominates with 47.87% Market Share.
     🤖 AI Clinics & Digital Health Tech Fuel Expansion! 💡
   </ScrollingTextSection>
-  <Feature
+  <FeatureSection
     id="diversity"
     imageUrl="/images/landing/puzzle_5417957.svg"
     imageAlt="Diversity"
@@ -194,9 +196,9 @@ const {
        This approach allows us to address diverse health needs effectively,
       <strong>making healthcare accessible and personalized for all.</strong>
     </span>
-  </Feature>
+  </FeatureSection>
 
-  <Feature
+  <FeatureSection
     id="sustainability"
     imageUrl="/images/landing/tag_4405535.svg"
     imageAlt="Sustainability"
@@ -216,7 +218,7 @@ const {
        This commitment not only aims for a healthier planet but also sets a
       precedent for future-oriented, sustainable healthcare innovations.
     </span>
-  </Feature>
+  </FeatureSection>
   <TestimonialSection id="testimonials">
     <span slot="subheader">Founders' Passion Fuels Progress</span>
     <span slot="header">Nurturing Health</span>
@@ -322,13 +324,13 @@ const {
 
   <!-- Add more TestimonialElement components as needed, following the same pattern -->
 
-  <CallToAction
-    id="contact-cta"
+  <CallToActionSection
+    id="contact"
     buttonText="Contact Us"
     buttonLink="mailto:contact@mends.eu"
   >
     <span slot="header">Connect With Mends</span>
      Reach out to explore how we can transform healthcare together. Your journey
     towards impactful collaboration starts here.
-  </CallToAction>
-</Layout>
+  </CallToActionSection>
+</GenericLayout>
