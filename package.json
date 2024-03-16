@@ -11,20 +11,20 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
-    "@astrojs/check": "^0.5.2",
-    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/check": "^0.5.9",
+    "@astrojs/sitemap": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
-    "@types/alpinejs": "^3.13.6",
-    "alpinejs": "^3.13.5",
-    "astro": "^4.3.5",
+    "@types/alpinejs": "^3.13.9",
+    "alpinejs": "^3.13.7",
+    "astro": "^4.5.5",
     "astro-robots-txt": "^1.0.0",
-    "astro-seo": "^0.8.2",
-    "typescript": "^5.3.3"
+    "astro-seo": "^0.8.3",
+    "typescript": "^5.4.2"
   },
   "devDependencies": {
-    "@types/alpinejs__intersect": "^3.13.3",
-    "@vite-pwa/astro": "^0.2.0",
-    "autoprefixer": "^10.4.17",
+    "@types/alpinejs__intersect": "^3.13.4",
+    "@vite-pwa/astro": "^0.3.0",
+    "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "unplugin-fonts": "^1.1.1"
